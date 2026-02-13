@@ -1,14 +1,15 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
 import logo from "@/assets/artamedia-logo.png";
 
 const services = [
-  "Broadband",
-  "Dedicated",
-  "Metro-E",
-  "DWDM",
-  "Dark Fiber",
-  "Backup on Demand",
+  { name: "Broadband", href: "/broadband" },
+  { name: "Dedicated", href: "#layanan" },
+  { name: "Metro-E", href: "#layanan" },
+  { name: "DWDM", href: "#layanan" },
+  { name: "Dark Fiber", href: "#layanan" },
+  { name: "Backup on Demand", href: "#layanan" },
 ];
 
 const Navbar = () => {
@@ -41,9 +42,9 @@ const Navbar = () => {
               <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <div className="bg-popover border border-border rounded-xl shadow-lg py-2 min-w-[200px]">
                   {services.map((s) => (
-                    <a key={s} href="#layanan" className="block px-4 py-2.5 text-sm text-popover-foreground hover:bg-muted transition-colors">
-                      {s}
-                    </a>
+                    <Link key={s.name} to={s.href} className="block px-4 py-2.5 text-sm text-popover-foreground hover:bg-muted transition-colors">
+                      {s.name}
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -79,7 +80,7 @@ const Navbar = () => {
             {serviceOpen && (
               <div className="pl-4 pb-2">
                 {services.map((s) => (
-                  <a key={s} href="#layanan" className="block py-2 text-sm text-muted-foreground">{s}</a>
+                  <Link key={s.name} to={s.href} className="block py-2 text-sm text-muted-foreground">{s.name}</Link>
                 ))}
               </div>
             )}
