@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackupHero from "@/components/backup/BackupHero";
 import BackupWhat from "@/components/backup/BackupWhat";
+import BackupArchitecture from "@/components/backup/BackupArchitecture";
 import BackupHowItWorks from "@/components/backup/BackupHowItWorks";
 import BackupAdvantages from "@/components/backup/BackupAdvantages";
 import BackupUseCase from "@/components/backup/BackupUseCase";
@@ -14,6 +15,7 @@ const BackupOnDemand = () => (
     <Navbar />
     <BackupHero />
     <BackupWhat />
+    <BackupArchitecture />
     <BackupHowItWorks />
     <BackupAdvantages />
     <BackupUseCase />
