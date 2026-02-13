@@ -9,13 +9,17 @@ const BroadbandCTA = () => (
       </p>
       <div className="flex flex-wrap justify-center gap-4">
         <a
-          href="#order"
+          href="https://wa.me/6282280257572?text=Halo%20Artamedia%2C%20saya%20tertarik%20dengan%20layanan%20Broadband"
+          target="_blank"
+          rel="noopener noreferrer"
           className="px-8 py-4 rounded-2xl bg-primary-foreground text-primary font-bold text-lg hover:bg-primary-foreground/90 transition-all duration-300 shadow-lg"
         >
           Daftar Sekarang
         </a>
         <a
-          href="#contact"
+          href="https://wa.me/6282280257572?text=Halo%20Artamedia%2C%20saya%20ingin%20konsultasi%20layanan%20Broadband"
+          target="_blank"
+          rel="noopener noreferrer"
           className="px-8 py-4 rounded-2xl border-2 border-primary-foreground/40 text-primary-foreground font-bold text-lg hover:bg-primary-foreground/10 transition-all duration-300"
         >
           Hubungi Sales
