@@ -61,7 +61,7 @@ const AboutIntro = () => (
         <div className="text-center mb-16">
           <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-3">About Us</p>
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
-            Tentang <span className="text-primary">Kami</span>
+            About <span className="text-primary">Us</span>
           </h2>
         </div>
 
