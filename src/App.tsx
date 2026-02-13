@@ -8,6 +8,7 @@ import Broadband from "./pages/Broadband";
 import Dedicated from "./pages/Dedicated";
 import MetroE from "./pages/MetroE";
 import DWDM from "./pages/DWDM";
+import DarkFiber from "./pages/DarkFiber";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/dedicated" element={<Dedicated />} />
           <Route path="/metro-e" element={<MetroE />} />
           <Route path="/dwdm" element={<DWDM />} />
+          <Route path="/dark-fiber" element={<DarkFiber />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
