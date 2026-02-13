@@ -1,4 +1,5 @@
 import { Wifi, AlertTriangle, RefreshCw, CheckCircle2 } from "lucide-react";
+import backupFailoverImg from "@/assets/backup-auto-failover.jpg";
 
 const steps = [
   { icon: Wifi, step: "01", title: "Primary Link Active", desc: "Koneksi utama berjalan normal." },
@@ -16,6 +17,20 @@ const BackupHowItWorks = () => (
       <p className="text-muted-foreground text-lg text-center max-w-2xl mx-auto mb-16">
         Proses failover otomatis yang menjaga bisnis Anda tetap online.
       </p>
+
+      {/* Image banner */}
+      <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-16">
+        <img
+          src={backupFailoverImg}
+          alt="Network engineer performing failover testing"
+          className="w-full h-64 lg:h-80 object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent" />
+        <div className="absolute bottom-6 left-8">
+          <p className="text-primary font-bold text-xl">Automatic Failover System</p>
+          <p className="text-muted-foreground text-sm">Peralihan koneksi otomatis tanpa intervensi manual</p>
+        </div>
+      </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {steps.map(({ icon: Icon, step, title, desc }, i) => (
