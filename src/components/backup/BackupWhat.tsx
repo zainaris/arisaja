@@ -72,10 +72,10 @@ const BackupWhat = () => (
             alt="Jakarta-Singapore backup connectivity infrastructure"
             className="w-full h-[480px] object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(0,0%,5%)]/90 via-[hsl(0,0%,5%)]/40 to-transparent" />
           <div className="absolute bottom-6 left-6 right-6">
-            <p className="text-primary font-bold text-lg">International Connectivity</p>
-            <p className="text-foreground/70 text-sm">Infrastruktur koneksi Jakarta – Singapore untuk redundansi maksimal</p>
+            <p className="text-primary font-bold text-lg drop-shadow-lg">International Connectivity</p>
+            <p className="text-white/90 text-sm drop-shadow-md">Infrastruktur koneksi Jakarta – Singapore untuk redundansi maksimal</p>
           </div>
         </div>
       </div>
