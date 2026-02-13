@@ -18,6 +18,16 @@ import timah from "@/assets/partners/timah.png";
 import swissBelhotel from "@/assets/partners/swiss-belhotel.png";
 import umBabel from "@/assets/partners/um-babel.png";
 import dcconnect from "@/assets/partners/dcconnect.png";
+import asyana from "@/assets/partners/asyana.png";
+import ibis from "@/assets/partners/ibis.png";
+import megaAnggrek from "@/assets/partners/mega-anggrek.png";
+import mercure from "@/assets/partners/mercure.png";
+import santika from "@/assets/partners/santika.png";
+import ibisBudget from "@/assets/partners/ibis-budget.png";
+import leafLogo from "@/assets/partners/leaf-logo.png";
+import maxone from "@/assets/partners/maxone.png";
+import ninjaXpress from "@/assets/partners/ninja-xpress.jpg";
+import aep from "@/assets/partners/aep.png";
 
 const partners = [
   { name: "Telkom Indonesia", logo: telkom },
@@ -43,6 +53,16 @@ const customers = [
   { name: "Swiss-Belhotel International", logo: swissBelhotel },
   { name: "Universitas Muhammadiyah Bangka Belitung", logo: umBabel },
   { name: "DC Connect Technology", logo: dcconnect },
+  { name: "Asyana Hotel", logo: asyana },
+  { name: "Ibis Hotels", logo: ibis },
+  { name: "Mega Anggrek", logo: megaAnggrek },
+  { name: "Mercure Hotels", logo: mercure },
+  { name: "Santika Indonesia", logo: santika },
+  { name: "Ibis Budget", logo: ibisBudget },
+  { name: "Leaf Logo", logo: leafLogo },
+  { name: "MaxOne Hotels", logo: maxone },
+  { name: "Ninja Xpress", logo: ninjaXpress },
+  { name: "AEP", logo: aep },
 ];
 
 const MarqueeRow = ({ items, speed = "30s" }: { items: typeof partners; speed?: string }) => (
