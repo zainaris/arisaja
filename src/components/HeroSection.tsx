@@ -15,7 +15,7 @@ const HeroSection = () => (
       className="absolute inset-0"
       style={{ backgroundImage: `url(${heroFiber})`, backgroundSize: "cover", backgroundPosition: "center" }}
     />
-    <div className="absolute inset-0 bg-[hsl(145,60%,10%)]/[0.15]" />
+    <div className="absolute inset-0 bg-gradient-to-r from-[hsl(145,60%,5%)]/90 via-[hsl(145,60%,5%)]/60 to-transparent" />
 
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 w-full">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
