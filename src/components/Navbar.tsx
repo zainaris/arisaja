@@ -9,7 +9,7 @@ const services = [
   { name: "Metro-E", href: "/metro-e" },
   { name: "DWDM", href: "/dwdm" },
   { name: "Dark Fiber", href: "/dark-fiber" },
-  { name: "Backup on Demand", href: "/#layanan" },
+  { name: "Backup on Demand", href: "/backup-on-demand" },
 ];
 
 const Navbar = () => {
