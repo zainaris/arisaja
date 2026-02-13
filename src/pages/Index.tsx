@@ -6,6 +6,7 @@ import NetworkStats from "@/components/NetworkStats";
 import PartnersStrip from "@/components/PartnersStrip";
 import Testimonials from "@/components/Testimonials";
 import FinalCTA from "@/components/FinalCTA";
+import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
 
 const Index = () => (
@@ -18,6 +19,7 @@ const Index = () => (
     <PartnersStrip />
     <Testimonials />
     <FinalCTA />
+    <ContactUs />
     <Footer />
   </div>
 );
