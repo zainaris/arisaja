@@ -5,7 +5,7 @@ import logo from "@/assets/artamedia-logo.png";
 
 const services = [
   { name: "Broadband", href: "/broadband" },
-  { name: "Dedicated", href: "/#layanan" },
+  { name: "Dedicated", href: "/dedicated" },
   { name: "Metro-E", href: "/#layanan" },
   { name: "DWDM", href: "/#layanan" },
   { name: "Dark Fiber", href: "/#layanan" },
