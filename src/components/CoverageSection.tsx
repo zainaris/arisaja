@@ -2,11 +2,11 @@ import coverageMap from "@/assets/coverage-map.jpg";
 import { MapPin } from "lucide-react";
 
 const popAreas = [
-  { region: "Sumatera", cities: ["Medan", "Pekanbaru", "Jambi", "Palembang", "Lampung"] },
+  { region: "Sumatera", cities: ["Medan", "Pekanbaru", "Jambi", "Palembang", "Lampung", "Bangka Belitung"] },
   { region: "Jawa", cities: ["DKI Jakarta (Hub)", "Cilegon", "Denpasar"] },
   { region: "Kalimantan", cities: ["Pontianak", "Banjarmasin", "Balikpapan"] },
   { region: "Sulawesi & Nusa Tenggara", cities: ["Makasar", "Lombok"] },
-  { region: "Internasional", cities: ["Singapore", "Bangka Belitung"] },
+  { region: "Internasional", cities: ["Singapore"] },
 ];
 
 const CoverageSection = () => (
