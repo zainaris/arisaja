@@ -1,4 +1,5 @@
 import { Gauge, Timer, ShieldCheck, Settings, Network, MonitorCheck } from "lucide-react";
+import metroNoc from "@/assets/metro-noc-monitoring.jpg";
 
 const features = [
   { icon: Gauge, title: "Dedicated Bandwidth 1:1", desc: "Bandwidth eksklusif tanpa sharing." },
@@ -18,6 +19,20 @@ const MetroAdvantages = () => (
       <p className="text-muted-foreground text-lg text-center max-w-2xl mx-auto mb-16">
         Konektivitas enterprise-grade untuk bisnis mission-critical
       </p>
+
+      {/* Hero image banner */}
+      <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-16">
+        <img
+          src={metroNoc}
+          alt="Network Operations Center monitoring Metro-E"
+          className="w-full h-64 lg:h-80 object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent" />
+        <div className="absolute bottom-6 left-8">
+          <p className="text-primary font-bold text-xl">24/7 NOC Monitoring</p>
+          <p className="text-muted-foreground text-sm">Tim kami memantau jaringan Anda setiap saat</p>
+        </div>
+      </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {features.map(({ icon: Icon, title, desc }) => (
