@@ -1,37 +1,34 @@
 import { RefreshCw, ShieldCheck, Sliders, Radio, FileCheck, Building2 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const features = [
-  { icon: RefreshCw, title: "Automatic Failover", desc: "Peralihan koneksi tanpa intervensi manual." },
-  { icon: ShieldCheck, title: "Zero Downtime Protection", desc: "Mengurangi risiko gangguan operasional." },
-  { icon: Sliders, title: "Flexible Bandwidth", desc: "Kapasitas backup disesuaikan kebutuhan." },
-  { icon: Radio, title: "Multi-Technology Option", desc: "Fiber, Wireless, atau Hybrid Backup." },
-  { icon: FileCheck, title: "SLA Supported", desc: "Didukung monitoring dan jaminan layanan." },
-  { icon: Building2, title: "Enterprise-Ready", desc: "Cocok untuk sistem mission-critical." },
+const featureKeys = [
+  { icon: RefreshCw, titleKey: "bk.adv.1.title", descKey: "bk.adv.1.desc" },
+  { icon: ShieldCheck, titleKey: "bk.adv.2.title", descKey: "bk.adv.2.desc" },
+  { icon: Sliders, titleKey: "bk.adv.3.title", descKey: "bk.adv.3.desc" },
+  { icon: Radio, titleKey: "bk.adv.4.title", descKey: "bk.adv.4.desc" },
+  { icon: FileCheck, titleKey: "bk.adv.5.title", descKey: "bk.adv.5.desc" },
+  { icon: Building2, titleKey: "bk.adv.6.title", descKey: "bk.adv.6.desc" },
 ];
 
-const BackupAdvantages = () => (
-  <section className="py-20 lg:py-28 bg-background">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-center mb-4">
-        Keunggulan <span className="text-primary">Backup On Demand</span>
-      </h2>
-      <p className="text-muted-foreground text-lg text-center max-w-2xl mx-auto mb-16">
-        Perlindungan koneksi menyeluruh untuk bisnis mission-critical Anda.
-      </p>
-
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {features.map(({ icon: Icon, title, desc }) => (
-          <div key={title} className="p-8 rounded-2xl bg-card shadow-card hover:shadow-card-hover transition-all duration-300 group">
-            <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-              <Icon size={28} className="text-primary" />
+const BackupAdvantages = () => {
+  const { t } = useLanguage();
+  return (
+    <section className="py-20 lg:py-28 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-center mb-4">{t("bk.adv.heading1")} <span className="text-primary">{t("bk.adv.heading2")}</span></h2>
+        <p className="text-muted-foreground text-lg text-center max-w-2xl mx-auto mb-16">{t("bk.adv.desc")}</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featureKeys.map(({ icon: Icon, titleKey, descKey }) => (
+            <div key={titleKey} className="p-8 rounded-2xl bg-card shadow-card hover:shadow-card-hover transition-all duration-300 group">
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors"><Icon size={28} className="text-primary" /></div>
+              <h3 className="text-xl font-bold text-foreground mb-3">{t(titleKey)}</h3>
+              <p className="text-muted-foreground leading-relaxed">{t(descKey)}</p>
             </div>
-            <h3 className="text-xl font-bold text-foreground mb-3">{title}</h3>
-            <p className="text-muted-foreground leading-relaxed">{desc}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default BackupAdvantages;

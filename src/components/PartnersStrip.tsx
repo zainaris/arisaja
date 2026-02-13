@@ -1,3 +1,5 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
 import cpanel from "@/assets/partners/cpanel.png";
 import lintasarta from "@/assets/partners/lintasarta.png";
 import ubiquiti from "@/assets/partners/ubiquiti.png";
@@ -99,28 +101,29 @@ const MarqueeRow = ({ items, speed = "30s" }: { items: typeof partners; speed?: 
   </div>
 );
 
-const PartnersStrip = () => (
-  <>
-    {/* Trusted by Businesses */}
-    <section className="py-16 bg-background overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-foreground text-center mb-12">
-          Trusted by <span className="text-primary">Businesses</span>
-        </h2>
-      </div>
-      <MarqueeRow items={partners} speed="30s" />
-    </section>
+const PartnersStrip = () => {
+  const { t } = useLanguage();
+  return (
+    <>
+      <section className="py-16 bg-background overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-foreground text-center mb-12">
+            {t("partners.heading1")} <span className="text-primary">{t("partners.heading2")}</span>
+          </h2>
+        </div>
+        <MarqueeRow items={partners} speed="30s" />
+      </section>
 
-    {/* Our Customers */}
-    <section className="py-16 bg-muted/30 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-foreground text-center mb-12">
-          Our <span className="text-primary">Customers</span>
-        </h2>
-      </div>
-      <MarqueeRow items={customers} speed="35s" />
-    </section>
-  </>
-);
+      <section className="py-16 bg-muted/30 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-foreground text-center mb-12">
+            {t("partners.customers1")} <span className="text-primary">{t("partners.customers2")}</span>
+          </h2>
+        </div>
+        <MarqueeRow items={customers} speed="35s" />
+      </section>
+    </>
+  );
+};
 
 export default PartnersStrip;
