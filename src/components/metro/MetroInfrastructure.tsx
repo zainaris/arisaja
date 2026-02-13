@@ -1,5 +1,5 @@
 import { CheckCircle } from "lucide-react";
-import nocCenter from "@/assets/noc-center.jpg";
+import metroNetworkRoom from "@/assets/metro-network-room.jpg";
 
 const bullets = [
   "Nationwide Fiber Backbone",
@@ -31,8 +31,8 @@ const MetroInfrastructure = () => (
         </div>
         <div className="order-1 lg:order-2">
           <img
-            src={nocCenter}
-            alt="Network Operation Center"
+            src={metroNetworkRoom}
+            alt="Enterprise network distribution room"
             className="rounded-2xl shadow-card w-full object-cover"
           />
         </div>

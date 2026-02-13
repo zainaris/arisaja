@@ -1,4 +1,4 @@
-import fiberInfra from "@/assets/fiber-infrastructure.jpg";
+import metroFiberSplice from "@/assets/metro-fiber-splice.jpg";
 
 const MetroWhat = () => (
   <section className="py-20 lg:py-28 bg-background">
@@ -6,8 +6,8 @@ const MetroWhat = () => (
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <img
-            src={fiberInfra}
-            alt="Fiber optic backbone"
+            src={metroFiberSplice}
+            alt="Fiber optic splicing for Metro-E"
             className="rounded-2xl shadow-card w-full object-cover"
           />
         </div>
