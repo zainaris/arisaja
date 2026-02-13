@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
 import logo from "@/assets/artamedia-logo.png";
@@ -15,8 +15,16 @@ const services = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [serviceOpen, setServiceOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const handleHashLink = (hash: string) => {
     setMobileOpen(false);
@@ -28,25 +36,39 @@ const Navbar = () => {
     }
   };
 
+  const isTransparent = !scrolled && !mobileOpen;
+
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isTransparent
+          ? "bg-transparent border-b border-transparent"
+          : "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 shrink-0">
             <img src={logo} alt="Artamedia" className="h-10 w-10 object-contain" />
-            <span className="font-bold text-sm lg:text-base text-foreground leading-tight">
+            <span className={`font-bold text-sm lg:text-base leading-tight transition-colors duration-300 ${
+              isTransparent ? "text-white" : "text-foreground"
+            }`}>
               Artamedia Citra<br className="hidden sm:block" /> Telematika Indonesia
             </span>
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-8">
-            <Link to="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Home</Link>
+            <Link to="/" className={`text-sm font-medium transition-colors ${
+              isTransparent ? "text-white/90 hover:text-white" : "text-foreground hover:text-primary"
+            }`}>Home</Link>
             
             <div className="relative group">
               <button
-                className="flex items-center gap-1 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                  isTransparent ? "text-white/90 hover:text-white" : "text-foreground hover:text-primary"
+                }`}
                 onClick={() => setServiceOpen(!serviceOpen)}
               >
                 Layanan <ChevronDown size={14} />
@@ -68,20 +90,30 @@ const Navbar = () => {
               </div>
             </div>
 
-            <button onClick={() => handleHashLink("#coverage")} className="text-sm font-medium text-foreground hover:text-primary transition-colors">Coverage</button>
-            <button onClick={() => handleHashLink("#about")} className="text-sm font-medium text-foreground hover:text-primary transition-colors">About Us</button>
-            <button onClick={() => handleHashLink("#contact")} className="text-sm font-medium text-foreground hover:text-primary transition-colors">Contact Us</button>
+            <button onClick={() => handleHashLink("#coverage")} className={`text-sm font-medium transition-colors ${
+              isTransparent ? "text-white/90 hover:text-white" : "text-foreground hover:text-primary"
+            }`}>Coverage</button>
+            <button onClick={() => handleHashLink("#about")} className={`text-sm font-medium transition-colors ${
+              isTransparent ? "text-white/90 hover:text-white" : "text-foreground hover:text-primary"
+            }`}>About Us</button>
+            <button onClick={() => handleHashLink("#contact")} className={`text-sm font-medium transition-colors ${
+              isTransparent ? "text-white/90 hover:text-white" : "text-foreground hover:text-primary"
+            }`}>Contact Us</button>
 
             <button
               onClick={() => handleHashLink("#order")}
-              className="ml-2 px-5 py-2.5 rounded-xl border-2 border-primary text-primary font-semibold text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              className={`ml-2 px-5 py-2.5 rounded-xl border-2 font-semibold text-sm transition-all duration-300 ${
+                isTransparent
+                  ? "border-white/60 text-white hover:bg-white hover:text-foreground"
+                  : "border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              }`}
             >
               Order Now
             </button>
           </div>
 
           {/* Mobile toggle */}
-          <button className="lg:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
+          <button className={`lg:hidden transition-colors ${isTransparent ? "text-white" : "text-foreground"}`} onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
