@@ -23,9 +23,6 @@ const Footer = () => (
             <a href="mailto:support@artamedianet.co.id" className="block text-sm text-primary-foreground/60 hover:text-primary transition-colors">
               support@artamedianet.co.id
             </a>
-            <a href="https://wa.me/6282280257572" target="_blank" rel="noopener noreferrer" className="block text-sm text-primary-foreground/60 hover:text-primary transition-colors">
-              +62 822-8025-7572
-            </a>
           </div>
         </div>
 
@@ -71,7 +68,7 @@ const Footer = () => (
             </li>
             <li>
               <a href="https://wa.me/6282280257572" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">
-                WhatsApp Support
+                Chat Support
               </a>
             </li>
           </ul>

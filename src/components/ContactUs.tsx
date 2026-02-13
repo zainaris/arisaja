@@ -54,7 +54,7 @@ const ContactUs = () => (
               <div>
                 <h4 className="font-semibold text-foreground text-lg">WhatsApp</h4>
                 <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">
-                  +62 822-8025-7572
+                  Chat via WhatsApp
                 </a>
                 <p className="text-muted-foreground text-sm mt-1">Fast response untuk konsultasi langsung</p>
               </div>
