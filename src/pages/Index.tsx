@@ -4,7 +4,6 @@ import AboutIntro from "@/components/AboutIntro";
 import CoverageSection from "@/components/CoverageSection";
 import NetworkStats from "@/components/NetworkStats";
 import PartnersStrip from "@/components/PartnersStrip";
-import Testimonials from "@/components/Testimonials";
 import FinalCTA from "@/components/FinalCTA";
 import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
@@ -17,7 +16,6 @@ const Index = () => (
     <CoverageSection />
     <NetworkStats />
     <PartnersStrip />
-    <Testimonials />
     <FinalCTA />
     <ContactUs />
     <Footer />
