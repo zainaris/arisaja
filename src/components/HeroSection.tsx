@@ -32,9 +32,6 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a href="#layanan" className="px-8 py-4 rounded-2xl bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl">
-                {t("hero.btn.services")}
-              </a>
               <a href="#coverage" className="px-8 py-4 rounded-2xl border-2 border-white/40 text-white font-semibold text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
                 {t("hero.btn.coverage")}
               </a>
