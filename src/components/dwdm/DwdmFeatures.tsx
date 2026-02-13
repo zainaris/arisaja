@@ -1,4 +1,5 @@
 import { Layers, Gauge, MapPin, Timer, Settings, ShieldCheck } from "lucide-react";
+import dwdmMultiplexer from "@/assets/dwdm-multiplexer.jpg";
 
 const features = [
   { icon: Layers, title: "Multi-Channel Wavelength", desc: "Mendukung multiple lambda dalam satu fiber." },
@@ -18,6 +19,20 @@ const DwdmFeatures = () => (
       <p className="text-muted-foreground text-lg text-center max-w-2xl mx-auto mb-16">
         Teknologi transport optik terdepan untuk kapasitas maksimal
       </p>
+
+      {/* Hero image banner */}
+      <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-16">
+        <img
+          src={dwdmMultiplexer}
+          alt="DWDM optical multiplexer equipment"
+          className="w-full h-64 lg:h-80 object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent" />
+        <div className="absolute bottom-6 left-8">
+          <p className="text-primary font-bold text-xl">Optical Transport Equipment</p>
+          <p className="text-muted-foreground text-sm">Perangkat DWDM kelas carrier untuk kapasitas multi-terabit</p>
+        </div>
+      </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {features.map(({ icon: Icon, title, desc }) => (
