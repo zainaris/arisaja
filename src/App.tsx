@@ -12,6 +12,7 @@ import DWDM from "./pages/DWDM";
 import DarkFiber from "./pages/DarkFiber";
 import BackupOnDemand from "./pages/BackupOnDemand";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/broadband" element={<Broadband />} />

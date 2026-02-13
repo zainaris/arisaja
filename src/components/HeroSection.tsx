@@ -13,7 +13,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section id="home" className="relative overflow-hidden bg-hero-gradient min-h-[90vh] flex items-center">
+    <section id="home" className="relative overflow-hidden bg-hero-gradient min-h-screen flex items-center">
       <div
         className="absolute inset-0"
         style={{ backgroundImage: `url(${heroFiber})`, backgroundSize: "cover", backgroundPosition: "center" }}

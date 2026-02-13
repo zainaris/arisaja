@@ -9,7 +9,7 @@ const BroadbandHero = () => {
   const badges = [t("bb.hero.badge1"), t("bb.hero.badge2"), t("bb.hero.badge3"), t("bb.hero.badge4")];
 
   return (
-    <section className="relative overflow-hidden min-h-[90vh] flex items-center">
+    <section className="relative overflow-hidden min-h-screen flex items-center">
       <div className="absolute inset-0" style={{ backgroundImage: `url(${broadbandHero})`, backgroundSize: "cover", backgroundPosition: "center" }} />
       <div className="absolute inset-0 bg-gradient-to-r from-[hsl(145,60%,5%)]/90 via-[hsl(145,60%,5%)]/70 to-[hsl(145,60%,5%)]/30" />
 

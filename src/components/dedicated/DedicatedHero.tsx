@@ -8,7 +8,7 @@ const WA_LINK = "https://wa.me/6282280257572?text=Halo%20Artamedia%2C%20saya%20t
 const DedicatedHero = () => {
   const { t } = useLanguage();
   return (
-    <section className="relative overflow-hidden min-h-[90vh] flex items-center">
+    <section className="relative overflow-hidden min-h-screen flex items-center">
       <div className="absolute inset-0" style={{ backgroundImage: `url(${dedicatedHero})`, backgroundSize: "cover", backgroundPosition: "center" }} />
       <div className="absolute inset-0 bg-gradient-to-r from-[hsl(145,60%,5%)]/90 via-[hsl(145,60%,5%)]/70 to-[hsl(145,60%,5%)]/30" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 w-full">
