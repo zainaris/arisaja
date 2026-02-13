@@ -8,63 +8,59 @@ const badges = [
   "24/7 NOC Support",
 ];
 
+const WA_LINK = "https://wa.me/6282280257572?text=Halo%20Artamedia%2C%20saya%20tertarik%20dengan%20layanan%20Metro-E";
+
 const MetroHero = () => (
-  <section className="relative overflow-hidden bg-hero-gradient min-h-[90vh] flex items-center">
+  <section className="relative overflow-hidden min-h-[90vh] flex items-center">
     <div
-      className="absolute inset-0 opacity-30"
+      className="absolute inset-0"
       style={{ backgroundImage: `url(${metroHero})`, backgroundSize: "cover", backgroundPosition: "center" }}
     />
-    <div className="absolute inset-0 bg-gradient-to-r from-[hsl(145,60%,10%)] via-[hsl(145,60%,10%,0.85)] to-transparent" />
+    <div className="absolute inset-0 bg-gradient-to-r from-[hsl(145,60%,5%)]/90 via-[hsl(145,60%,5%)]/70 to-[hsl(145,60%,5%)]/30" />
 
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 w-full">
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground text-sm font-semibold">
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            Enterprise Connectivity
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-primary-foreground">
-            Metro-E & Leased Line untuk Koneksi Antar Lokasi{" "}
-            <span className="text-gradient-green">Tanpa Batas</span>
-          </h1>
-
-          <p className="text-lg text-primary-foreground/80 max-w-xl leading-relaxed">
-            Solusi konektivitas dedicated antar kantor, data center, dan lokasi bisnis Anda
-            dengan performa stabil, latency rendah, dan SLA tinggi.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="#order"
-              className="px-8 py-4 rounded-2xl bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              Order Now
-            </a>
-            <a
-              href="#contact"
-              className="px-8 py-4 rounded-2xl border-2 border-primary-foreground/30 text-primary-foreground font-semibold text-lg hover:bg-primary-foreground/10 transition-all duration-300"
-            >
-              Konsultasi Sekarang
-            </a>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4 pt-4">
-            {badges.map((badge) => (
-              <div key={badge} className="flex items-center gap-2">
-                <CheckCircle size={18} className="text-accent shrink-0" />
-                <span className="text-sm text-primary-foreground/80">{badge}</span>
-              </div>
-            ))}
-          </div>
+      <div className="max-w-2xl space-y-8">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-primary-light text-sm font-semibold border border-white/10">
+          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+          Enterprise Connectivity
         </div>
 
-        <div className="hidden lg:block">
-          <img
-            src={metroHero}
-            alt="Metro Ethernet network connectivity"
-            className="rounded-3xl shadow-2xl glow-green animate-glow-pulse"
-          />
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white drop-shadow-lg">
+          Metro-E & Leased Line untuk Koneksi Antar Lokasi{" "}
+          <span className="text-gradient-green">Tanpa Batas</span>
+        </h1>
+
+        <p className="text-lg text-white/90 max-w-xl leading-relaxed drop-shadow-md">
+          Solusi konektivitas dedicated antar kantor, data center, dan lokasi bisnis Anda
+          dengan performa stabil, latency rendah, dan SLA tinggi.
+        </p>
+
+        <div className="flex flex-wrap gap-4">
+          <a
+            href={WA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 rounded-2xl bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            Order Now
+          </a>
+          <a
+            href={WA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 rounded-2xl border-2 border-white/40 text-white font-semibold text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
+          >
+            Konsultasi Sekarang
+          </a>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4 pt-4">
+          {badges.map((badge) => (
+            <div key={badge} className="flex items-center gap-2 backdrop-blur-sm bg-black/20 rounded-lg px-3 py-2">
+              <CheckCircle size={18} className="text-primary-light shrink-0" />
+              <span className="text-sm text-white/90">{badge}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
