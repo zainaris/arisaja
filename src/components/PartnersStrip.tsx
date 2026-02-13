@@ -28,6 +28,13 @@ import leafLogo from "@/assets/partners/leaf-logo.png";
 import maxone from "@/assets/partners/maxone.png";
 import ninjaXpress from "@/assets/partners/ninja-xpress.jpg";
 import aep from "@/assets/partners/aep.png";
+import afIndonesia from "@/assets/partners/af-indonesia.png";
+import angelsWing from "@/assets/partners/angels-wing.jpg";
+import ciptaKridatama from "@/assets/partners/cipta-kridatama.png";
+import euronet from "@/assets/partners/euronet.jpg";
+import evansIndonesia from "@/assets/partners/evans-indonesia.jpg";
+import indosatOoredoo from "@/assets/partners/indosat-ooredoo.png";
+import istanaAgung from "@/assets/partners/istana-agung.png";
 
 const partners = [
   { name: "Telkom Indonesia", logo: telkom },
@@ -63,6 +70,13 @@ const customers = [
   { name: "MaxOne Hotels", logo: maxone },
   { name: "Ninja Xpress", logo: ninjaXpress },
   { name: "AEP", logo: aep },
+  { name: "AF Indonesia", logo: afIndonesia },
+  { name: "Angel's Wing Bangka", logo: angelsWing },
+  { name: "Cipta Kridatama", logo: ciptaKridatama },
+  { name: "Euronet", logo: euronet },
+  { name: "PT Evans Indonesia", logo: evansIndonesia },
+  { name: "Indosat Ooredoo", logo: indosatOoredoo },
+  { name: "Istana Agung Babel", logo: istanaAgung },
 ];
 
 const MarqueeRow = ({ items, speed = "30s" }: { items: typeof partners; speed?: string }) => (
