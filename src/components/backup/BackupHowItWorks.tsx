@@ -25,10 +25,10 @@ const BackupHowItWorks = () => (
           alt="Network engineer performing failover testing"
           className="w-full h-64 lg:h-80 object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(0,0%,5%)]/90 via-[hsl(0,0%,5%)]/50 to-[hsl(0,0%,5%)]/20" />
         <div className="absolute bottom-6 left-8">
-          <p className="text-primary font-bold text-xl">Automatic Failover System</p>
-          <p className="text-muted-foreground text-sm">Peralihan koneksi otomatis tanpa intervensi manual</p>
+          <p className="text-primary font-bold text-xl drop-shadow-lg">Automatic Failover System</p>
+          <p className="text-white/90 text-sm drop-shadow-md">Peralihan koneksi otomatis tanpa intervensi manual</p>
         </div>
       </div>
 

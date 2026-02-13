@@ -28,10 +28,10 @@ const BackupUseCase = () => (
             alt="Enterprise buildings connected with backup network"
             className="w-full h-[400px] object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(0,0%,5%)]/90 via-[hsl(0,0%,5%)]/40 to-transparent" />
           <div className="absolute bottom-6 left-6 right-6">
-            <p className="text-primary font-bold text-lg">Enterprise Connectivity</p>
-            <p className="text-foreground/70 text-sm">Koneksi backup untuk gedung perkantoran, rumah sakit, dan perbankan</p>
+            <p className="text-primary font-bold text-lg drop-shadow-lg">Enterprise Connectivity</p>
+            <p className="text-white/90 text-sm drop-shadow-md">Koneksi backup untuk gedung perkantoran, rumah sakit, dan perbankan</p>
           </div>
         </div>
 
