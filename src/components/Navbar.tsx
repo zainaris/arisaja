@@ -7,7 +7,7 @@ const services = [
   { name: "Broadband", href: "/broadband" },
   { name: "Dedicated", href: "/dedicated" },
   { name: "Metro-E", href: "/metro-e" },
-  { name: "DWDM", href: "/#layanan" },
+  { name: "DWDM", href: "/dwdm" },
   { name: "Dark Fiber", href: "/#layanan" },
   { name: "Backup on Demand", href: "/#layanan" },
 ];
