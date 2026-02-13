@@ -1,11 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
-const stats = [
-  { value: 10, suffix: "+", label: "Tahun Pengalaman" },
-  { value: 5000, suffix: "+", label: "Pelanggan Aktif" },
-  { value: 99.9, suffix: "%", label: "Uptime SLA" },
-  { value: 24, suffix: "/7", label: "Monitoring" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
   const [count, setCount] = useState(0);
@@ -48,19 +42,30 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
   );
 };
 
-const NetworkStats = () => (
-  <section className="py-20 lg:py-24 bg-dark-green">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
-        {stats.map((stat) => (
-          <div key={stat.label} className="text-center space-y-3">
-            <Counter target={stat.value} suffix={stat.suffix} />
-            <p className="text-primary-foreground/70 font-medium text-lg">{stat.label}</p>
-          </div>
-        ))}
+const NetworkStats = () => {
+  const { t } = useLanguage();
+
+  const stats = [
+    { value: 10, suffix: "+", label: t("stats.experience") },
+    { value: 5000, suffix: "+", label: t("stats.customers") },
+    { value: 99.9, suffix: "%", label: t("stats.uptime") },
+    { value: 24, suffix: "/7", label: t("stats.monitoring") },
+  ];
+
+  return (
+    <section className="py-20 lg:py-24 bg-dark-green">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center space-y-3">
+              <Counter target={stat.value} suffix={stat.suffix} />
+              <p className="text-primary-foreground/70 font-medium text-lg">{stat.label}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default NetworkStats;
