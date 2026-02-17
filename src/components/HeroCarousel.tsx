@@ -44,7 +44,7 @@ const HeroCarousel = () => {
             key={i}
             src={src}
             alt={`Banner ${i + 1}`}
-            className="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out bg-background"
+            className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ease-in-out"
             style={{ opacity: i === current ? 1 : 0 }}
             loading={i === 0 ? "eager" : "lazy"}
           />
