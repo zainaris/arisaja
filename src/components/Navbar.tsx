@@ -41,7 +41,8 @@ const Navbar = () => {
     }
   };
 
-  const isTransparent = false;
+  const isHome = location.pathname === "/";
+  const isTransparent = !isHome && !scrolled && !mobileOpen;
 
   const cycleLang = () => {
     const idx = langOptions.indexOf(lang);
