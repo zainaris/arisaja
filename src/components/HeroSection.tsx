@@ -2,10 +2,12 @@ import { useState, useEffect, useCallback, useRef, TouchEvent } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import heroStreaming from "@/assets/hero-banner-streaming.jpg";
 import heroPromotion from "@/assets/hero-banner-promotion.jpg";
+import heroAndroidBox from "@/assets/hero-android-box.jpg";
 
 const slides = [
   { src: heroStreaming, alt: "Streaming Sepuasnya - ARTAMEDIANET" },
   { src: heroPromotion, alt: "Unlimited Internet Promotion - ARTAMEDIANET" },
+  { src: heroAndroidBox, alt: "Android Box - Ubah TV Biasa Jadi Smart TV - ARTAMEDIANET" },
 ];
 
 const HeroSection = () => {
