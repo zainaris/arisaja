@@ -24,7 +24,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative w-full overflow-hidden bg-background"
+      className="relative w-full overflow-hidden bg-background pt-16 lg:pt-20"
       style={{ aspectRatio: "12/5", maxHeight: "70vh" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
