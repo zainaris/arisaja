@@ -38,7 +38,7 @@ const HeroCarousel = () => {
       onTouchEnd={handleTouchEnd}
     >
       {/* Slides */}
-      <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
+      <div className="relative w-full" style={{ aspectRatio: "16/9", maxHeight: "75vh" }}>
         {slides.map((src, i) => (
           <img
             key={i}

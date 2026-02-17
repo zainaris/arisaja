@@ -41,7 +41,7 @@ const Navbar = () => {
     }
   };
 
-  const isTransparent = !scrolled && !mobileOpen;
+  const isTransparent = false;
 
   const cycleLang = () => {
     const idx = langOptions.indexOf(lang);
