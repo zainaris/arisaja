@@ -1,10 +1,12 @@
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import heroStreaming from "@/assets/hero-banner-streaming.jpg";
+import heroPromotion from "@/assets/hero-banner-promotion.jpg";
 import heroFiber from "@/assets/hero-fiber-new.jpg";
 
 const slides = [
   { src: heroStreaming, alt: "Streaming Sepuasnya - ARTAMEDIANET" },
+  { src: heroPromotion, alt: "Unlimited Internet Promotion - ARTAMEDIANET" },
   { src: heroFiber, alt: "Fiber Optic Infrastructure - ARTAMEDIANET" },
 ];
 
