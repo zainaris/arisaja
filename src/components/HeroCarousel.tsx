@@ -38,13 +38,13 @@ const HeroCarousel = () => {
       onTouchEnd={handleTouchEnd}
     >
       {/* Slides */}
-      <div className="relative w-full" style={{ aspectRatio: "16/9", maxHeight: "75vh" }}>
+      <div className="relative w-full" style={{ aspectRatio: "16/9", maxHeight: "70vh" }}>
         {slides.map((src, i) => (
           <img
             key={i}
             src={src}
             alt={`Banner ${i + 1}`}
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
+            className="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ease-in-out bg-background"
             style={{ opacity: i === current ? 1 : 0 }}
             loading={i === 0 ? "eager" : "lazy"}
           />
