@@ -138,13 +138,16 @@ const t: Translations = {
 
   // Why Choose Us
   "why.heading1": { id: "Kenapa Memilih", en: "Why Choose", cn: "为什么选择" },
-  "why.heading2": { id: "Kami?", en: "Us?", cn: "我们？" },
-  "why.fiber": { id: "Infrastruktur Fiber Sendiri", en: "Own Fiber Infrastructure", cn: "自有光纤基础设施" },
-  "why.redundant": { id: "Redundant Network", en: "Redundant Network", cn: "冗余网络" },
-  "why.noc": { id: "24/7 NOC Monitoring", en: "24/7 NOC Monitoring", cn: "24/7网络运营中心监控" },
-  "why.engineer": { id: "Tim Engineer Profesional", en: "Professional Engineers", cn: "专业工程师团队" },
-  "why.fast": { id: "Respon Cepat", en: "Fast Response", cn: "快速响应" },
-  "why.sla": { id: "SLA Enterprise", en: "Enterprise SLA", cn: "企业级SLA" },
+  "why.heading2": { id: "Artamedianet?", en: "Artamedianet?", cn: "Artamedianet？" },
+  "why.subtitle": { id: "Koneksi cepat, stabil, dan terpercaya untuk rumah dan bisnis Anda.", en: "Fast, stable, and trusted connectivity for your home and business.", cn: "为您的家庭和企业提供快速、稳定、可信赖的连接。" },
+  "why.card1.title": { id: "Internet Cepat & Stabil", en: "Fast & Stable Internet", cn: "快速稳定的网络" },
+  "why.card1.desc": { id: "Didukung jaringan fiber optic berkecepatan tinggi dengan koneksi yang konsisten tanpa buffering.", en: "Backed by high-speed fiber optic network with consistent connection and zero buffering.", cn: "由高速光纤网络支持，连接稳定无缓冲。" },
+  "why.card2.title": { id: "100% Fiber Optic", en: "100% Fiber Optic", cn: "100% 光纤" },
+  "why.card2.desc": { id: "Teknologi terbaru untuk performa maksimal dan latency rendah.", en: "Latest technology for maximum performance and low latency.", cn: "最新技术，最大性能，低延迟。" },
+  "why.card3.title": { id: "Support 24 Jam", en: "24/7 Support", cn: "全天候支持" },
+  "why.card3.desc": { id: "Tim teknis profesional siap membantu kapan saja Anda membutuhkan.", en: "Professional technical team ready to help whenever you need.", cn: "专业技术团队随时为您提供帮助。" },
+  "why.card4.title": { id: "Hiburan Lengkap", en: "Full Entertainment", cn: "完整娱乐" },
+  "why.card4.desc": { id: "Nikmati 100+ Live TV dan 1000+ Video On Demand berkualitas HD.", en: "Enjoy 100+ Live TV channels and 1000+ HD Video On Demand.", cn: "享受100+直播电视频道和1000+高清视频点播。" },
 
   // Testimonials
   "testimonials.heading1": { id: "Apa Kata", en: "What Our", cn: "我们的" },
