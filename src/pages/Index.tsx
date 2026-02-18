@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import ServiceCards from "@/components/ServiceCards";
 import AboutIntro from "@/components/AboutIntro";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import CoverageSection from "@/components/CoverageSection";
@@ -15,6 +16,7 @@ const Index = () => (
     <div className="pt-16 lg:pt-20">
       <HeroSection />
     </div>
+    <ServiceCards />
     <AboutIntro />
     <WhyChooseUs />
     <CoverageSection />
