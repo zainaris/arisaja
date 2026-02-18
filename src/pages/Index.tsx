@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutIntro from "@/components/AboutIntro";
+import WhyChooseUs from "@/components/WhyChooseUs";
 import CoverageSection from "@/components/CoverageSection";
 import NetworkStats from "@/components/NetworkStats";
 import PartnersStrip from "@/components/PartnersStrip";
@@ -15,6 +16,7 @@ const Index = () => (
       <HeroSection />
     </div>
     <AboutIntro />
+    <WhyChooseUs />
     <CoverageSection />
     <NetworkStats />
     <PartnersStrip />
