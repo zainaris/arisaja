@@ -19,21 +19,20 @@ const AboutIntro = () => {
 
   return (
     <section id="about" className="bg-background">
-      {/* Hero Banner - same style as service pages (navbar overlaps at top) */}
-      <div className="relative w-full overflow-hidden" style={{ height: "65vh", minHeight: "420px" }}>
+      {/* Hero Banner */}
+      <div className="relative w-full overflow-hidden" style={{ height: "60vh", minHeight: "400px" }}>
         <img
           src={aboutHero}
           alt="Tim Artamedia"
           className="w-full h-full object-cover object-center"
         />
-        {/* Strong overlay: dark at top (for navbar readability) and dark at bottom for text */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80" />
-        <div className="absolute inset-0 flex items-end pb-16 lg:pb-20">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/40" />
+        <div className="absolute inset-0 flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <h1 className="text-4xl lg:text-6xl font-bold text-white drop-shadow-lg mb-2">
+            <h1 className="text-4xl lg:text-6xl font-bold text-white drop-shadow-lg mb-3">
               About Us
             </h1>
-            <p className="text-primary font-semibold text-xl lg:text-2xl drop-shadow-lg">
+            <p className="text-primary font-semibold text-xl drop-shadow-lg">
               PT Artamedia Citra Telematika Indonesia
             </p>
           </div>

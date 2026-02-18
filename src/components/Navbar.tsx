@@ -13,8 +13,8 @@ const services = [
   { name: "Backup on Demand", href: "/backup-on-demand" },
 ];
 
-const langLabels: Record<Lang, string> = { id: "ID", en: "EN" };
-const langOptions: Lang[] = ["id", "en"];
+const langLabels: Record<Lang, string> = { id: "ID", en: "EN", cn: "CN" };
+const langOptions: Lang[] = ["id", "en", "cn"];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);

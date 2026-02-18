@@ -1,8 +1,8 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 
-export type Lang = "id" | "en";
+export type Lang = "id" | "en" | "cn";
 
-type Translations = Record<string, Partial<Record<"id" | "en" | "cn", string>>>;
+type Translations = Record<string, Record<Lang, string>>;
 
 const t: Translations = {
   // Navbar
@@ -557,7 +557,7 @@ const LanguageContext = createContext<LanguageContextType>({
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLang] = useState<Lang>(() => {
     const saved = localStorage.getItem("lang") as Lang | null;
-    return saved && ["id", "en"].includes(saved) ? saved : "id";
+    return saved && ["id", "en", "cn"].includes(saved) ? saved : "id";
   });
 
   const handleSetLang = (newLang: Lang) => {
@@ -566,8 +566,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const translate = (key: string): string => {
-    const entry = t[key];
-    return (entry?.[lang] ?? entry?.["id"] ?? key);
+    return t[key]?.[lang] ?? key;
   };
 
   return (
