@@ -98,7 +98,7 @@ const HeroSection = () => {
     <section
       id="home"
       className="relative w-full overflow-hidden bg-background"
-      style={{ aspectRatio: "12/5", maxHeight: "70vh" }}
+      style={{ height: "clamp(480px, 55vw, 800px)", maxHeight: "850px" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
@@ -146,14 +146,22 @@ const HeroSection = () => {
                 : "none",
             }}
           >
-            {/* Subtle overlay for depth */}
             {isPrevSlide && isAnimating && (
               <div className="absolute inset-0 bg-black/20 z-10 transition-opacity duration-700" />
             )}
+            {/* Left-side gradient overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent z-10 pointer-events-none" />
             <img
               src={slide.src}
               alt={slide.alt}
-              className="w-full h-full object-cover object-center"
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center right",
+              }}
               loading={i === 0 ? "eager" : "lazy"}
             />
           </div>
