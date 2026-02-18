@@ -98,7 +98,7 @@ const HeroSection = () => {
     <section
       id="home"
       className="relative w-full overflow-hidden bg-background"
-      style={{ height: "clamp(480px, 55vw, 800px)", maxHeight: "850px" }}
+      style={{ aspectRatio: "12/5", maxHeight: "850px" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
@@ -157,8 +157,7 @@ const HeroSection = () => {
                 inset: 0,
                 width: "100%",
                 height: "100%",
-                objectFit: "cover",
-                objectPosition: "center right",
+                objectFit: "fill",
               }}
               loading={i === 0 ? "eager" : "lazy"}
             />
