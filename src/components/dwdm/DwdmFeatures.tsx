@@ -20,8 +20,13 @@ const DwdmFeatures = () => {
         <p className="text-muted-foreground text-lg text-center max-w-2xl mx-auto mb-16">{t("dwdm.feat.desc")}</p>
         <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-16">
           <img src={dwdmMultiplexer} alt="DWDM optical multiplexer equipment" className="w-full h-64 lg:h-80 object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent" />
-          <div className="absolute bottom-6 left-8"><p className="text-primary font-bold text-xl">{t("dwdm.feat.banner.title")}</p><p className="text-muted-foreground text-sm">{t("dwdm.feat.banner.desc")}</p></div>
+          {/* Strong overlay for text legibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+          <div className="absolute bottom-6 left-8 right-8">
+            <p className="text-primary font-bold text-xl drop-shadow-lg">{t("dwdm.feat.banner.title")}</p>
+            <p className="text-white/90 text-sm mt-1 drop-shadow-md font-medium">{t("dwdm.feat.banner.desc")}</p>
+          </div>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {featureKeys.map(({ icon: Icon, titleKey, descKey }) => (

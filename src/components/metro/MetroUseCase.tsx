@@ -21,10 +21,11 @@ const MetroUseCase = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
             <img src={metroEnterprise} alt="Enterprise fiber optic network infrastructure" className="w-full h-[400px] object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent" />
+            {/* Strong overlay for text legibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10" />
             <div className="absolute bottom-6 left-6 right-6">
-              <p className="text-primary font-bold text-lg">Enterprise-Grade Infrastructure</p>
-              <p className="text-foreground/70 text-sm">{t("metro.usecase.infra.title")}</p>
+              <p className="text-primary font-bold text-lg drop-shadow-lg">Enterprise-Grade Infrastructure</p>
+              <p className="text-white/90 text-sm mt-1 drop-shadow-md font-medium">{t("metro.usecase.infra.title")}</p>
             </div>
           </div>
           <div className="grid gap-4">

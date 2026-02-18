@@ -30,8 +30,12 @@ const BackupArchitecture = () => {
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
             <img src={backupFailover} alt="Backup failover system infrastructure" className="w-full h-[560px] object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(145,60%,10%)]/70 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6"><p className="text-primary font-bold text-lg">Failover System</p><p className="text-primary-foreground/70 text-sm">Sistem failover otomatis dengan monitoring real-time</p></div>
+            {/* Strong dark overlay for legibility */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <p className="text-primary font-bold text-lg drop-shadow-lg">Failover System</p>
+              <p className="text-white/90 text-sm mt-1 drop-shadow-md font-medium">Sistem failover otomatis dengan monitoring real-time</p>
+            </div>
           </div>
         </div>
       </div>
