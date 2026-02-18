@@ -1,13 +1,13 @@
 import { useState, useEffect, useCallback, useRef, TouchEvent } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import heroStreaming from "@/assets/hero-banner-streaming.jpg";
+import heroStreamingNew from "@/assets/hero-banner-streaming-new.jpg";
 import heroPromotion from "@/assets/hero-banner-promotion.jpg";
-import heroAndroidBox from "@/assets/hero-android-box.jpg";
+import heroStreaming from "@/assets/hero-banner-streaming.jpg";
 
 const slides = [
-  { src: heroStreaming, alt: "Streaming Sepuasnya - ARTAMEDIANET" },
+  { src: heroStreamingNew, alt: "Streaming Spuasnya - ARTAMEDIANET" },
   { src: heroPromotion, alt: "Internet Cepat Tanpa Batasan - ARTAMEDIANET" },
-  { src: heroAndroidBox, alt: "Android Box - Ubah TV Biasa Jadi Smart TV - ARTAMEDIANET" },
+  { src: heroStreaming, alt: "Streaming Sepuasnya - ARTAMEDIANET" },
 ];
 
 const HeroSection = () => {
