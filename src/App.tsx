@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index";
+import About from "./pages/About";
 import Broadband from "./pages/Broadband";
 import Dedicated from "./pages/Dedicated";
 import MetroE from "./pages/MetroE";
@@ -26,6 +27,7 @@ const App = () => (
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
             <Route path="/broadband" element={<Broadband />} />
             <Route path="/dedicated" element={<Dedicated />} />
             <Route path="/metro-e" element={<MetroE />} />

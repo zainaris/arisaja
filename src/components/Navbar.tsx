@@ -96,9 +96,9 @@ const Navbar = () => {
             <button onClick={() => handleHashLink("#coverage")} className={`text-sm font-medium transition-colors ${
               isTransparent ? "text-white/90 hover:text-white" : "text-foreground hover:text-primary"
             }`}>{t("nav.coverage")}</button>
-            <button onClick={() => handleHashLink("#about")} className={`text-sm font-medium transition-colors ${
+            <Link to="/about" className={`text-sm font-medium transition-colors ${
               isTransparent ? "text-white/90 hover:text-white" : "text-foreground hover:text-primary"
-            }`}>{t("nav.about")}</button>
+            }`}>{t("nav.about")}</Link>
             <button onClick={() => handleHashLink("#contact")} className={`text-sm font-medium transition-colors ${
               isTransparent ? "text-white/90 hover:text-white" : "text-foreground hover:text-primary"
             }`}>{t("nav.contact")}</button>
@@ -164,7 +164,7 @@ const Navbar = () => {
             )}
           </div>
           <button onClick={() => handleHashLink("#coverage")} className="block py-3 text-foreground font-medium">{t("nav.coverage")}</button>
-          <button onClick={() => handleHashLink("#about")} className="block py-3 text-foreground font-medium">{t("nav.about")}</button>
+          <Link to="/about" onClick={() => setMobileOpen(false)} className="block py-3 text-foreground font-medium">{t("nav.about")}</Link>
           <button onClick={() => handleHashLink("#contact")} className="block py-3 text-foreground font-medium">{t("nav.contact")}</button>
           <button onClick={() => handleHashLink("#order")} className="mt-3 block w-full text-center px-5 py-2.5 rounded-xl border-2 border-primary text-primary font-semibold">
             {t("nav.order")}
