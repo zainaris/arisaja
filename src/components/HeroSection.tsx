@@ -1,13 +1,13 @@
 import { useState, useEffect, useCallback, useRef, TouchEvent } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import heroStreamingNew from "@/assets/hero-banner-streaming-new.jpg";
-import heroPromotion from "@/assets/hero-banner-promotion.jpg";
-import heroStreaming from "@/assets/hero-banner-streaming.jpg";
+import heroSlide1 from "@/assets/hero-slide-1.png";
+import heroSlide2 from "@/assets/hero-slide-2.png";
+import heroSlide3 from "@/assets/hero-slide-3.png";
 
 const slides = [
-  { src: heroStreamingNew, alt: "Streaming Spuasnya - ARTAMEDIANET" },
-  { src: heroPromotion, alt: "Internet Cepat Tanpa Batasan - ARTAMEDIANET" },
-  { src: heroStreaming, alt: "Streaming Sepuasnya - ARTAMEDIANET" },
+  { src: heroSlide1, alt: "Internet Cepat Tanpa Batasan Kuota - Goodnet by Artamedia" },
+  { src: heroSlide2, alt: "Streaming Sepuasnya - Artamedianet" },
+  { src: heroSlide3, alt: "Ubah TV Biasa Jadi Smart TV - Goodnet Android Box" },
 ];
 
 const HeroSection = () => {
@@ -147,10 +147,8 @@ const HeroSection = () => {
             }}
           >
             {isPrevSlide && isAnimating && (
-              <div className="absolute inset-0 bg-black/20 z-10 transition-opacity duration-700" />
+              <div className="absolute inset-0 bg-black/10 z-10 transition-opacity duration-700" />
             )}
-            {/* Left-side gradient overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent z-10 pointer-events-none" />
             <img
               src={slide.src}
               alt={slide.alt}
