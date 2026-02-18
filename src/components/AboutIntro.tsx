@@ -26,18 +26,14 @@ const AboutIntro = () => {
           alt="Tim Artamedia"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/40" />
         <div className="absolute inset-0 flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-3 drop-shadow">
-              {t("about.purpose") || "Tentang Kami"}
-            </p>
-            <h1 className="text-4xl lg:text-6xl font-bold text-white drop-shadow-lg mb-4">
-              {t("about.heading1")}{" "}
-              <span className="text-primary">{t("about.heading2")}</span>
+            <h1 className="text-4xl lg:text-6xl font-bold text-white drop-shadow-lg mb-3">
+              About Us
             </h1>
-            <p className="text-white/80 text-lg max-w-xl drop-shadow">
-              {t("about.desc1b") || "Lebih dari 18 tahun menghadirkan konektivitas terpercaya untuk bisnis dan masyarakat Indonesia."}
+            <p className="text-primary font-semibold text-xl drop-shadow-lg">
+              PT Artamedia Citra Telematika Indonesia
             </p>
           </div>
         </div>
