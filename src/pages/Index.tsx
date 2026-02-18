@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ServiceCards from "@/components/ServiceCards";
 import GamingPromoSection from "@/components/GamingPromoSection";
+import SocialLifestyleSection from "@/components/SocialLifestyleSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import CoverageSection from "@/components/CoverageSection";
 import NetworkStats from "@/components/NetworkStats";
@@ -18,6 +19,7 @@ const Index = () => (
     </div>
     <ServiceCards />
     <GamingPromoSection />
+    <SocialLifestyleSection />
     <WhyChooseUs />
     <CoverageSection />
     <NetworkStats />
