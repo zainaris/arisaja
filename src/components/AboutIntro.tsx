@@ -1,25 +1,8 @@
-import { Target, Rocket, TrendingUp, Building2, Wifi, Shield, Award, Radio } from "lucide-react";
+import { Target, Rocket, Building2, Wifi, Shield, Award, Radio } from "lucide-react";
 import aboutOffice from "@/assets/about-office.jpg";
 import aboutNoc from "@/assets/about-noc.jpg";
+import aboutHero from "@/assets/about-hero.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
-
-const growthData = [
-  { year: "2017", revenue: 1873 },
-  { year: "2018", revenue: 2556 },
-  { year: "2019", revenue: 3561 },
-  { year: "2020", revenue: 4929 },
-  { year: "2021", revenue: 7030 },
-  { year: "2022", revenue: 9062 },
-];
 
 const timelineIcons = [Building2, Wifi, Award, Shield, Radio];
 const timelineYears = ["2006", "2014", "2017", "2018", "2019"];
@@ -36,15 +19,33 @@ const AboutIntro = () => {
 
   return (
     <section id="about" className="bg-background">
+      {/* Hero Banner */}
+      <div className="relative w-full overflow-hidden" style={{ height: "60vh", minHeight: "400px" }}>
+        <img
+          src={aboutHero}
+          alt="Tim Artamedia"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/30" />
+        <div className="absolute inset-0 flex items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-3 drop-shadow">
+              {t("about.purpose") || "Tentang Kami"}
+            </p>
+            <h1 className="text-4xl lg:text-6xl font-bold text-white drop-shadow-lg mb-4">
+              {t("about.heading1")}{" "}
+              <span className="text-primary">{t("about.heading2")}</span>
+            </h1>
+            <p className="text-white/80 text-lg max-w-xl drop-shadow">
+              {t("about.desc1b") || "Lebih dari 18 tahun menghadirkan konektivitas terpercaya untuk bisnis dan masyarakat Indonesia."}
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* About Us + Timeline */}
       <div className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
-              {t("about.heading1")} <span className="text-primary">{t("about.heading2")}</span>
-            </h2>
-          </div>
-
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
             <div className="relative">
               <img src={aboutOffice} alt="Tim Artamedia" className="rounded-2xl shadow-card w-full object-cover aspect-[4/3]" />
@@ -124,53 +125,6 @@ const AboutIntro = () => {
                 <h3 className="text-2xl font-bold text-white">{t("about.mission")}</h3>
               </div>
               <p className="text-white/80 leading-relaxed text-lg">{t("about.mission.text")}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Company Growth */}
-      <div className="py-20 lg:py-28 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-3">{t("about.growth")}</p>
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
-              {t("about.growth.heading1")} <span className="text-primary">{t("about.growth.heading2")}</span>
-            </h2>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <TrendingUp size={28} className="text-primary" />
-                </div>
-                <div>
-                  <p className="text-4xl font-bold text-primary">9.062M</p>
-                  <p className="text-muted-foreground">{t("about.growth.revenue")}</p>
-                </div>
-              </div>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                {t("about.growth.desc")} <strong className="text-foreground">{t("about.growth.times")}</strong> {t("about.growth.period")}
-              </p>
-            </div>
-
-            <div className="bg-card rounded-2xl p-6 border border-border shadow-card">
-              <ResponsiveContainer width="100%" height={320}>
-                <LineChart data={growthData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-                  <XAxis dataKey="year" stroke="hsl(var(--muted-foreground))" fontSize={14} />
-                  <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} tickFormatter={(v: number) => `${(v / 1000).toFixed(1)}B`} />
-                  <Tooltip
-                    contentStyle={{ backgroundColor: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "12px" }}
-                    formatter={(value: number) => [`${value.toLocaleString()} Juta`, "Revenue"]}
-                  />
-                  <Line type="monotone" dataKey="revenue" stroke="hsl(var(--primary))" strokeWidth={3}
-                    dot={{ r: 6, fill: "hsl(var(--primary))", strokeWidth: 3, stroke: "hsl(var(--background))" }}
-                    activeDot={{ r: 8 }}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
             </div>
           </div>
         </div>
