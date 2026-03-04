@@ -2,6 +2,7 @@ import { Target, Rocket, Building2, Wifi, Shield, Award, Radio } from "lucide-re
 import aboutOffice from "@/assets/about-office.jpg";
 import aboutNoc from "@/assets/about-noc.jpg";
 import aboutHero from "@/assets/about-hero.jpg";
+import trustedNetwork from "@/assets/trusted-network.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const timelineIcons = [Building2, Wifi, Award, Shield, Radio];
@@ -87,6 +88,15 @@ const AboutIntro = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Trusted Network Banner */}
+      <div className="w-full">
+        <img
+          src={trustedNetwork}
+          alt="Get Connected, Always Connected - Artamedia Trusted Network"
+          className="w-full h-auto object-contain"
+        />
       </div>
 
       {/* Vision & Mission */}
