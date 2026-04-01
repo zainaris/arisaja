@@ -7,7 +7,8 @@ import { cities, services, WA_LINK, type CityInfo } from "@/data/seoData";
 import { MapPin, Phone, ArrowRight, CheckCircle } from "lucide-react";
 
 const CityPage = () => {
-  const { citySlug } = useParams<{ citySlug: string }>();
+  const location = useLocation();
+  const citySlug = location.pathname.replace(/^\/lokasi\//, "");
   const city = cities.find(c => c.slug === citySlug);
   if (!city) return <Navigate to="/" />;
 
