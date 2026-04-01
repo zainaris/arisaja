@@ -18,8 +18,11 @@ import BlogIndex from "./pages/BlogIndex";
 import BlogArticlePage from "./pages/BlogArticlePage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import { getAllServiceLocationSlugs, cities } from "./data/seoData";
 
 const queryClient = new QueryClient();
+
+const serviceLocationRoutes = getAllServiceLocationSlugs();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -40,10 +43,14 @@ const App = () => (
             <Route path="/backup-on-demand" element={<BackupOnDemand />} />
             
             {/* SEO: Service + Location pages */}
-            <Route path="/:slug" element={<ServiceLocationPage />} />
+            {serviceLocationRoutes.map(r => (
+              <Route key={r.path} path={r.path} element={<ServiceLocationPage />} />
+            ))}
             
             {/* SEO: City pages */}
-            <Route path="/lokasi/:citySlug" element={<CityPage />} />
+            {cities.map(c => (
+              <Route key={c.slug} path={`/lokasi/${c.slug}`} element={<CityPage />} />
+            ))}
             
             {/* Blog */}
             <Route path="/blog" element={<BlogIndex />} />
