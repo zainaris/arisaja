@@ -8,7 +8,8 @@ import { services, cities, generateServiceLocationContent, WA_LINK, type Service
 import { CheckCircle, Phone, ArrowRight, Shield, Clock, Zap, MapPin } from "lucide-react";
 
 const ServiceLocationPage = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const location = useLocation();
+  const slug = location.pathname.replace(/^\//, "");
   if (!slug) return <Navigate to="/" />;
 
   // Parse slug to find service + city
