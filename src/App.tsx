@@ -12,10 +12,17 @@ import MetroE from "./pages/MetroE";
 import DWDM from "./pages/DWDM";
 import DarkFiber from "./pages/DarkFiber";
 import BackupOnDemand from "./pages/BackupOnDemand";
+import ServiceLocationPage from "./pages/ServiceLocationPage";
+import CityPage from "./pages/CityPage";
+import BlogIndex from "./pages/BlogIndex";
+import BlogArticlePage from "./pages/BlogArticlePage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import { getAllServiceLocationSlugs, cities } from "./data/seoData";
 
 const queryClient = new QueryClient();
+
+const serviceLocationRoutes = getAllServiceLocationSlugs();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -34,6 +41,21 @@ const App = () => (
             <Route path="/dwdm" element={<DWDM />} />
             <Route path="/dark-fiber" element={<DarkFiber />} />
             <Route path="/backup-on-demand" element={<BackupOnDemand />} />
+            
+            {/* SEO: Service + Location pages */}
+            {serviceLocationRoutes.map(r => (
+              <Route key={r.path} path={r.path} element={<ServiceLocationPage />} />
+            ))}
+            
+            {/* SEO: City pages */}
+            {cities.map(c => (
+              <Route key={c.slug} path={`/lokasi/${c.slug}`} element={<CityPage />} />
+            ))}
+            
+            {/* Blog */}
+            <Route path="/blog" element={<BlogIndex />} />
+            <Route path="/blog/:articleSlug" element={<BlogArticlePage />} />
+            
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
