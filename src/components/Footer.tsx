@@ -62,6 +62,15 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/10 pt-8">
+          <div className="flex flex-wrap justify-center gap-4 mb-4">
+            <Link to="/privacy-policy" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Privacy Policy</Link>
+            <span className="text-primary-foreground/20">|</span>
+            <Link to="/terms" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Terms & Conditions</Link>
+            <span className="text-primary-foreground/20">|</span>
+            <Link to="/refund-policy" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Refund Policy</Link>
+            <span className="text-primary-foreground/20">|</span>
+            <Link to="/delivery-policy" className="text-sm text-primary-foreground/50 hover:text-primary-foreground transition-colors">Delivery Policy</Link>
+          </div>
           <p className="text-center text-primary-foreground/50 text-sm">
             © 2026 Artamedia Citra Telematika Indonesia. All Rights Reserved.
           </p>

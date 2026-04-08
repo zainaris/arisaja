@@ -17,6 +17,10 @@ import CityPage from "./pages/CityPage";
 import BlogIndex from "./pages/BlogIndex";
 import BlogArticlePage from "./pages/BlogArticlePage";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
+import RefundPolicy from "./pages/RefundPolicy";
+import DeliveryPolicy from "./pages/DeliveryPolicy";
 import ScrollToTop from "./components/ScrollToTop";
 import { getAllServiceLocationSlugs, cities } from "./data/seoData";
 
@@ -55,6 +59,12 @@ const App = () => (
             {/* Blog */}
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:articleSlug" element={<BlogArticlePage />} />
+            
+            {/* Legal pages */}
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/refund-policy" element={<RefundPolicy />} />
+            <Route path="/delivery-policy" element={<DeliveryPolicy />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
