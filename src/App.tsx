@@ -17,6 +17,10 @@ import CityPage from "./pages/CityPage";
 import BlogIndex from "./pages/BlogIndex";
 import BlogArticlePage from "./pages/BlogArticlePage";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
+import RefundPolicy from "./pages/RefundPolicy";
+import DeliveryPolicy from "./pages/DeliveryPolicy";
 import ScrollToTop from "./components/ScrollToTop";
 import { getAllServiceLocationSlugs, cities } from "./data/seoData";
 
