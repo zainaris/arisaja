@@ -45,7 +45,7 @@ const PricingCard = ({ plan, monthLabel }: { plan: Plan; monthLabel: string }) =
         </li>
       ))}
     </ul>
-    <a href={`https://wa.me/6282280257572?text=Halo%20Artamedia%2C%20saya%20tertarik%20paket%20${encodeURIComponent(plan.name)}%20${encodeURIComponent(plan.speed)}`} target="_blank" rel="noopener noreferrer"
+    <a href={`https://wa.me/6281517667777?text=Halo%20Artamedia%2C%20saya%20tertarik%20paket%20${encodeURIComponent(plan.name)}%20${encodeURIComponent(plan.speed)}`} target="_blank" rel="noopener noreferrer"
       className={`block text-center px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 ${plan.highlight ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90" : "bg-primary text-primary-foreground hover:bg-primary-dark"}`}>
       Order Now
     </a>

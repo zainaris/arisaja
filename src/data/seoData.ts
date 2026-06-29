@@ -185,7 +185,7 @@ export const cities: CityInfo[] = [
   { slug: "singapore", name: "Singapore", region: "Internasional", localContext: "Singapore sebagai hub teknologi dan keuangan Asia Tenggara menjadi titik interkoneksi internasional Artamedia, menghubungkan jaringan Indonesia ke global internet exchange dan cloud provider dunia." },
 ];
 
-export const WA_LINK = "https://wa.me/6282280257572";
+export const WA_LINK = "https://wa.me/6281517667777";
 
 export function getServiceBySlug(slug: string): ServiceInfo | undefined {
   return services.find(s => s.slug === slug);

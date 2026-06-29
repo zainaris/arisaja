@@ -3,7 +3,7 @@ import dedicatedHero from "@/assets/dedicated-hero.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const badges = ["Dedicated 1:1 Bandwidth", "SLA Up To 99.9%", "24/7 NOC Support", "Static Public IP"];
-const WA_LINK = "https://wa.me/6282280257572?text=Halo%20Artamedia%2C%20saya%20tertarik%20dengan%20layanan%20Dedicated%20Internet";
+const WA_LINK = "https://wa.me/6281517667777?text=Halo%20Artamedia%2C%20saya%20tertarik%20dengan%20layanan%20Dedicated%20Internet";
 
 const DedicatedHero = () => {
   const { t } = useLanguage();

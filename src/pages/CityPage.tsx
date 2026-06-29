@@ -36,7 +36,7 @@ const CityPage = () => {
       "name": `Artamedia ${city.name}`,
       "description": metaDesc,
       "url": `https://arisaja.lovable.app/lokasi/${city.slug}`,
-      "telephone": "+6282280257572",
+      "telephone": "+6281517667777",
       "address": { "@type": "PostalAddress", "addressLocality": city.name, "addressCountry": "ID" }
     },
     {

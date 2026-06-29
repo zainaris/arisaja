@@ -3,7 +3,7 @@ import heroImg from "@/assets/darkfiber-hero.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const badges = ["Exclusive Fiber Core", "Full Infrastructure Control", "Scalable Capacity", "Carrier-Grade Ready"];
-const WA_LINK = "https://wa.me/6282280257572?text=Halo%20Artamedia%2C%20saya%20tertarik%20dengan%20layanan%20Dark%20Fiber";
+const WA_LINK = "https://wa.me/6281517667777?text=Halo%20Artamedia%2C%20saya%20tertarik%20dengan%20layanan%20Dark%20Fiber";
 
 const DarkFiberHero = () => {
   const { t } = useLanguage();

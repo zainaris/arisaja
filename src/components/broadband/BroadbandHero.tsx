@@ -2,7 +2,7 @@ import { CheckCircle } from "lucide-react";
 import broadbandHero from "@/assets/broadband-hero.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const WA_LINK = "https://wa.me/6282280257572?text=Halo%20Artamedia%2C%20saya%20tertarik%20dengan%20layanan%20Broadband";
+const WA_LINK = "https://wa.me/6281517667777?text=Halo%20Artamedia%2C%20saya%20tertarik%20dengan%20layanan%20Broadband";
 
 const BroadbandHero = () => {
   const { t } = useLanguage();

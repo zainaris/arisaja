@@ -1,7 +1,7 @@
 import { Mail, Phone, Clock, Send } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const WA_LINK = "https://wa.me/6282280257572?text=Halo%20Artamedia%2C%20saya%20ingin%20konsultasi%20layanan%20internet";
+const WA_LINK = "https://wa.me/6281517667777?text=Halo%20Artamedia%2C%20saya%20ingin%20konsultasi%20layanan%20internet";
 
 const ContactUs = () => {
   const { t } = useLanguage();
@@ -75,7 +75,7 @@ const ContactUs = () => {
                 const email = (form.elements.namedItem("email") as HTMLInputElement).value;
                 const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
                 const waText = `Halo Artamedia, saya ${name} (${email}).%0A%0A${message}`;
-                window.open(`https://wa.me/6282280257572?text=${encodeURIComponent(waText)}`, "_blank");
+                window.open(`https://wa.me/6281517667777?text=${encodeURIComponent(waText)}`, "_blank");
               }}
               className="space-y-5"
             >
