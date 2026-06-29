@@ -52,7 +52,7 @@ const Footer = () => {
             <h4 className="font-semibold text-primary-foreground mb-4">{t("footer.support")}</h4>
             <ul className="space-y-2">
               <li><a href="mailto:support@artamedianet.co.id" className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">{t("footer.email.support")}</a></li>
-              <li><a href="https://wa.me/6282280257572" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">{t("footer.chat.support")}</a></li>
+              <li><a href="https://wa.me/6281517667777" target="_blank" rel="noopener noreferrer" className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors">{t("footer.chat.support")}</a></li>
             </ul>
             <div className="mt-6 p-4 rounded-xl bg-primary/10 border border-primary/20">
               <p className="text-primary-foreground text-sm font-semibold">{t("footer.24.support")}</p>

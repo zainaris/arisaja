@@ -3,7 +3,7 @@ import dwdmHero from "@/assets/dwdm-hero.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const badges = ["Multi-Terabit Capacity", "100G / 200G / 400G Ready", "Carrier Grade Infrastructure", "Nationwide & Regional Backbone"];
-const WA_LINK = "https://wa.me/6282280257572?text=Halo%20Artamedia%2C%20saya%20tertarik%20dengan%20layanan%20DWDM";
+const WA_LINK = "https://wa.me/6281517667777?text=Halo%20Artamedia%2C%20saya%20tertarik%20dengan%20layanan%20DWDM";
 
 const DwdmHero = () => {
   const { t } = useLanguage();

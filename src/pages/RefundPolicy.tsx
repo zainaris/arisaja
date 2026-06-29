@@ -128,7 +128,7 @@ const RefundPolicy = () => {
               <div className="bg-muted/50 rounded-lg p-6 mt-4">
                 <p className="font-semibold text-foreground">PT Artamedia Citra Telematika Indonesia</p>
                 <p className="text-foreground/80">Email: <a href="mailto:support@artamedianet.co.id" className="text-primary hover:underline">support@artamedianet.co.id</a></p>
-                <p className="text-foreground/80">WhatsApp: <a href="https://wa.me/6282280257572" className="text-primary hover:underline">+62 822-8025-7572</a></p>
+                <p className="text-foreground/80">WhatsApp: <a href="https://wa.me/6281517667777" className="text-primary hover:underline">+62 815-1766-7777</a></p>
                 <p className="text-foreground/80">Website: <a href="https://artamedianet.co.id" className="text-primary hover:underline">https://artamedianet.co.id</a></p>
               </div>
             </section>

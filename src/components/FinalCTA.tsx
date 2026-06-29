@@ -1,6 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const WA_LINK = "https://wa.me/6282280257572?text=Halo%20Artamedia%2C%20saya%20ingin%20konsultasi%20layanan%20internet";
+const WA_LINK = "https://wa.me/6281517667777?text=Halo%20Artamedia%2C%20saya%20ingin%20konsultasi%20layanan%20internet";
 
 const FinalCTA = () => {
   const { t } = useLanguage();

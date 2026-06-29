@@ -43,7 +43,7 @@ const MetroCoverage = () => {
           ))}
         </div>
         <div className="text-center mt-10">
-          <a href="https://wa.me/6282280257572?text=Halo%2C%20saya%20ingin%20mengetahui%20jangkauan%20Metro-E%20di%20area%20saya" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-2xl bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary-dark transition-all duration-300 shadow-lg">{t("metro.coverage.btn")}</a>
+          <a href="https://wa.me/6281517667777?text=Halo%2C%20saya%20ingin%20mengetahui%20jangkauan%20Metro-E%20di%20area%20saya" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-2xl bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary-dark transition-all duration-300 shadow-lg">{t("metro.coverage.btn")}</a>
         </div>
       </div>
     </section>

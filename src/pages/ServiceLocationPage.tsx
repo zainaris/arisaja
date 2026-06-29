@@ -54,7 +54,7 @@ const ServiceLocationPage = () => {
       "name": "Artamedia - " + foundCity.name,
       "description": `Penyedia layanan ${foundService.shortName} di ${foundCity.name}`,
       "url": `https://arisaja.lovable.app/${slug}`,
-      "telephone": "+6282280257572",
+      "telephone": "+6281517667777",
       "address": { "@type": "PostalAddress", "addressLocality": foundCity.name, "addressCountry": "ID" }
     },
     {
