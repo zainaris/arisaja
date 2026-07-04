@@ -1,13 +1,13 @@
 import { useState, useEffect, useCallback, useRef, TouchEvent } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import heroSlide1 from "@/assets/hero-slide-1.png";
-import heroSlide2 from "@/assets/hero-slide-2.png";
-import heroSlide3 from "@/assets/hero-slide-3.png";
+import heroSlide1 from "@/assets/hero-slide-1.png.asset.json";
+import heroSlide2 from "@/assets/hero-slide-2.png.asset.json";
+import heroSlide3 from "@/assets/hero-slide-3.png.asset.json";
 
 const slides = [
-  { src: heroSlide1, alt: "Internet Cepat Tanpa Batasan Kuota - Goodnet by Artamedia" },
-  { src: heroSlide2, alt: "Streaming Sepuasnya - Artamedianet" },
-  { src: heroSlide3, alt: "Ubah TV Biasa Jadi Smart TV - Goodnet Android Box" },
+  { src: heroSlide1.url, alt: "Jaringan Telekomunikasi Artamedia - Konektivitas Andal di Seluruh Indonesia" },
+  { src: heroSlide2.url, alt: "Infrastruktur Fiber Optik Kota - Artamedianet ISP Enterprise" },
+  { src: heroSlide3.url, alt: "Backbone Nasional Artamedia - Konektivitas Global" },
 ];
 
 const HeroSection = () => {
