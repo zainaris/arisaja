@@ -148,17 +148,19 @@ const HeroSection = () => {
             {isPrevSlide && isAnimating && (
               <div className="absolute inset-0 bg-black/10 z-10 transition-opacity duration-700" />
             )}
-            <img
-              src={slide.src}
-              alt={slide.alt}
+            <div
+              role="img"
+              aria-label={slide.alt}
               style={{
                 position: "absolute",
                 inset: 0,
                 width: "100%",
                 height: "100%",
-                objectFit: "fill",
+                backgroundImage: `url(${slide.src})`,
+                backgroundSize: "100% 100%",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
               }}
-              loading={i === 0 ? "eager" : "lazy"}
             />
           </div>
         );
