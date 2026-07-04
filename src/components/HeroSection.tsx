@@ -176,13 +176,13 @@ const HeroSection = () => {
       {/* Hero content - left aligned */}
       <div className="absolute inset-0 z-20 flex items-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 w-full">
-          <div className="max-w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl pt-8 md:pt-0">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.05] drop-shadow-[0_4px_12px_rgba(0,0,0,0.45)]">
+          <div className="max-w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl pt-10 sm:pt-8 md:pt-0">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white tracking-tight leading-[1.05] drop-shadow-[0_4px_12px_rgba(0,0,0,0.45)]">
               Trusted Network.
               <br />
               Trusted Business.
             </h1>
-            <p className="mt-5 md:mt-6 text-base sm:text-lg md:text-xl text-white/90 leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)] max-w-xl">
+            <p className="mt-4 sm:mt-5 md:mt-6 text-sm sm:text-base md:text-lg lg:text-xl text-white/90 leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)] max-w-xl">
               Delivering high-performance internet, enterprise connectivity, cloud networking, and digital infrastructure for businesses across Indonesia.
             </p>
             <div className="mt-7 md:mt-10 flex flex-wrap items-center gap-4">
