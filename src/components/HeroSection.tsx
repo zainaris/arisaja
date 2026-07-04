@@ -165,9 +165,51 @@ const HeroSection = () => {
         );
       })}
 
+      {/* Dark left-to-right gradient overlay for readability */}
+      <div
+        className="absolute inset-0 z-15 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.50) 35%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0) 100%)",
+        }}
+      />
+
+      {/* Hero content - left aligned */}
+      <div className="absolute inset-0 z-20 flex items-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 w-full">
+          <div className="max-w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl pt-8 md:pt-0">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.05] drop-shadow-[0_4px_12px_rgba(0,0,0,0.45)]">
+              Trusted Network.
+              <br />
+              Trusted Business.
+            </h1>
+            <p className="mt-5 md:mt-6 text-base sm:text-lg md:text-xl text-white/90 leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)] max-w-xl">
+              Delivering high-performance internet, enterprise connectivity, cloud networking, and digital infrastructure for businesses across Indonesia.
+            </p>
+            <div className="mt-7 md:mt-10 flex flex-wrap items-center gap-4">
+              <a
+                href="#services"
+                className="inline-flex items-center justify-center rounded-lg px-7 py-3.5 text-sm md:text-base font-semibold bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 shadow-lg shadow-black/25 hover:shadow-xl hover:shadow-black/30 hover:-translate-y-0.5 backdrop-blur-sm"
+              >
+                Explore Services
+              </a>
+              <a
+                href="https://wa.me/6281517667777"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-lg px-7 py-3.5 text-sm md:text-base font-semibold border-2 border-white/70 bg-white/10 text-white hover:bg-white/20 hover:border-white transition-all duration-200 shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-black/30 hover:-translate-y-0.5 backdrop-blur-md"
+              >
+                Contact Sales
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Gradient edge hints */}
       <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black/20 to-transparent z-20 pointer-events-none" />
       <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black/20 to-transparent z-20 pointer-events-none" />
+
 
       {/* Arrows */}
       <button
