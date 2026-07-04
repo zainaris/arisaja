@@ -42,7 +42,7 @@ const services = [
 
 const ServiceCards = () => {
   return (
-    <section className="bg-background py-8 px-4 sm:px-6 lg:px-8">
+    <section id="services" className="bg-background py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {services.map(({ title, icon: Icon, href }) => (
