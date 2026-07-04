@@ -167,7 +167,7 @@ const HeroSection = () => {
 
       {/* Dark left-to-right gradient overlay for readability */}
       <div
-        className="absolute inset-0 z-15 pointer-events-none"
+        className="absolute inset-0 z-[15] pointer-events-none"
         style={{
           background:
             "linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.50) 35%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0) 100%)",
