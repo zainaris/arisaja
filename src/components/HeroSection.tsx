@@ -1,13 +1,13 @@
 import { useState, useEffect, useCallback, useRef, TouchEvent } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import heroSlide1 from "@/assets/hero-slide-1.png.asset.json";
-import heroSlide2 from "@/assets/hero-slide-2.png.asset.json";
-import heroSlide3 from "@/assets/hero-slide-3.png.asset.json";
+import heroSlide1 from "@/assets/hero-slide-1.png";
+import heroSlide2 from "@/assets/hero-slide-2.png";
+import heroSlide3 from "@/assets/hero-slide-3.png";
 
 const slides = [
-  { src: heroSlide1.url, alt: "Jaringan Telekomunikasi Artamedia - Konektivitas Andal di Seluruh Indonesia" },
-  { src: heroSlide2.url, alt: "Infrastruktur Fiber Optik Kota - Artamedianet ISP Enterprise" },
-  { src: heroSlide3.url, alt: "Backbone Nasional Artamedia - Konektivitas Global" },
+  { src: heroSlide1, alt: "Jaringan Telekomunikasi Artamedia - Konektivitas Andal di Seluruh Indonesia" },
+  { src: heroSlide2, alt: "Infrastruktur Fiber Optik Kota - Artamedianet ISP Enterprise" },
+  { src: heroSlide3, alt: "Backbone Nasional Artamedia - Konektivitas Global" },
 ];
 
 const HeroSection = () => {
