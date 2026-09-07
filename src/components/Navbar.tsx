@@ -1,23 +1,20 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { ChevronDown, Menu, X, Globe, ArrowUpRight } from "lucide-react";
+import { ChevronDown, Menu, X, Globe } from "lucide-react";
 import logo from "@/assets/artamedia-logo.png";
 import { useLanguage, Lang } from "@/contexts/LanguageContext";
 
-const solutions = [
-  { name: "Dedicated Internet", desc: "1:1 dedicated bandwidth", href: "/dedicated" },
-  { name: "Business Internet", desc: "Fiber for business operations", href: "/broadband" },
-  { name: "Metro Ethernet", desc: "Point-to-point connectivity", href: "/metro-e" },
-  { name: "DWDM", desc: "High-capacity transport", href: "/dwdm" },
-  { name: "Dark Fiber", desc: "Dedicated fiber infrastructure", href: "/dark-fiber" },
-  { name: "Backup on Demand", desc: "Redundancy & failover", href: "/backup-on-demand" },
+const services = [
+  { name: "Broadband", href: "/broadband" },
+  { name: "Dedicated", href: "/dedicated" },
+  { name: "Metro-E", href: "/metro-e" },
+  { name: "DWDM", href: "/dwdm" },
+  { name: "Dark Fiber", href: "/dark-fiber" },
+  { name: "Backup on Demand", href: "/backup-on-demand" },
 ];
 
 const langLabels: Record<Lang, string> = { id: "ID", en: "EN" };
 const langOptions: Lang[] = ["id", "en"];
-
-const WA_QUOTE =
-  "https://wa.me/6281517667777?text=Halo%20Artamedia%2C%20saya%20ingin%20meminta%20penawaran%20layanan";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -25,10 +22,10 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const { lang, setLang } = useLanguage();
+  const { lang, setLang, t } = useLanguage();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 50);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -37,97 +34,114 @@ const Navbar = () => {
   const handleHashLink = (hash: string) => {
     setMobileOpen(false);
     if (location.pathname === "/") {
-      document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
+      const el = document.querySelector(hash);
+      el?.scrollIntoView({ behavior: "smooth" });
     } else {
       navigate("/" + hash);
     }
   };
 
-  const isTransparent = !scrolled && !mobileOpen;
+  const isHome = location.pathname === "/";
+  const isTransparent = !isHome && !scrolled && !mobileOpen;
 
   const cycleLang = () => {
     const idx = langOptions.indexOf(lang);
     setLang(langOptions[(idx + 1) % langOptions.length]);
   };
 
-  const linkClass = `text-sm font-medium transition-colors ${
-    isTransparent ? "text-white/80 hover:text-white" : "text-navy-foreground/80 hover:text-white"
-  }`;
-
   return (
     <nav
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isTransparent
-          ? "border-b border-transparent bg-transparent"
-          : "border-b border-white/10 bg-navy/85 shadow-lg backdrop-blur-xl"
+          ? "bg-transparent border-b border-transparent"
+          : "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between lg:h-20">
-          <Link to="/" className="flex shrink-0 items-center gap-3">
-            <img src={logo} alt="Artamedia" className="h-9 w-9 object-contain" />
-            <span className="font-display text-sm font-bold leading-tight text-white lg:text-[0.95rem]">
-              Artamedia Citra
-              <br className="hidden sm:block" /> Telematika Indonesia
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          <Link to="/" className="flex items-center gap-3 shrink-0">
+            <img src={logo} alt="Artamedia" className="h-10 w-10 object-contain" />
+            <span className={`font-bold text-sm lg:text-base leading-tight transition-colors duration-300 ${
+              isTransparent ? "text-white" : "text-foreground"
+            }`}>
+              Artamedia Citra<br className="hidden sm:block" /> Telematika Indonesia
             </span>
           </Link>
 
-          <div className="hidden items-center gap-9 lg:flex">
-            <div className="group relative">
-              <button className={`flex items-center gap-1.5 ${linkClass}`}>
-                Solutions <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />
+          <div className="hidden lg:flex items-center gap-8">
+            <Link to="/" className={`text-sm font-medium transition-colors ${
+              isTransparent ? "text-white/90 hover:text-white" : "text-foreground hover:text-primary"
+            }`}>{t("nav.home")}</Link>
+            
+            <div className="relative group">
+              <button
+                className={`flex items-center gap-1 text-sm font-medium transition-colors ${
+                  isTransparent ? "text-white/90 hover:text-white" : "text-foreground hover:text-primary"
+                }`}
+                onClick={() => setServiceOpen(!serviceOpen)}
+              >
+                {t("nav.services")} <ChevronDown size={14} />
               </button>
-              <div className="invisible absolute left-1/2 top-full w-[34rem] -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                <div className="grid grid-cols-2 gap-1 rounded-2xl border border-border bg-popover p-3 shadow-2xl">
-                  {solutions.map((s) => (
-                    <Link
-                      key={s.name}
-                      to={s.href}
-                      className="group/item rounded-xl px-4 py-3 transition-colors hover:bg-secondary"
-                    >
-                      <span className="flex items-center gap-1.5 text-sm font-semibold text-popover-foreground">
-                        {s.name}
-                        <ArrowUpRight size={13} className="opacity-0 transition-opacity group-hover/item:opacity-100" />
-                      </span>
-                      <span className="mt-0.5 block text-xs text-muted-foreground">{s.desc}</span>
+              <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div className="bg-popover border border-border rounded-xl shadow-lg py-2 min-w-[200px]">
+                  {services.map((s) => (
+                    <Link key={s.name} to={s.href} className="block px-4 py-2.5 text-sm text-popover-foreground hover:bg-muted transition-colors">
+                      {s.name}
                     </Link>
                   ))}
                 </div>
               </div>
             </div>
 
-            <button onClick={() => handleHashLink("#network")} className={linkClass}>Network</button>
-            <Link to="/about" className={linkClass}>Company</Link>
-            <Link to="/blog" className={linkClass}>Resources</Link>
-            <button onClick={() => handleHashLink("#contact")} className={linkClass}>Contact</button>
+            <button onClick={() => handleHashLink("#coverage")} className={`text-sm font-medium transition-colors ${
+              isTransparent ? "text-white/90 hover:text-white" : "text-foreground hover:text-primary"
+            }`}>{t("nav.coverage")}</button>
+            <Link to="/about" className={`text-sm font-medium transition-colors ${
+              isTransparent ? "text-white/90 hover:text-white" : "text-foreground hover:text-primary"
+            }`}>{t("nav.about")}</Link>
+            <button onClick={() => handleHashLink("#contact")} className={`text-sm font-medium transition-colors ${
+              isTransparent ? "text-white/90 hover:text-white" : "text-foreground hover:text-primary"
+            }`}>{t("nav.contact")}</button>
 
+            {/* Language Switcher */}
             <button
               onClick={cycleLang}
-              className="flex items-center gap-1.5 rounded-lg border border-white/20 px-3 py-1.5 text-xs font-semibold text-white/80 transition-colors hover:bg-white/10"
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold transition-all duration-300 ${
+                isTransparent
+                  ? "text-white/90 hover:bg-white/10 border border-white/20"
+                  : "text-foreground hover:bg-muted border border-border"
+              }`}
             >
-              <Globe size={13} />
+              <Globe size={14} />
               {langLabels[lang]}
             </button>
 
-            <a
-              href={WA_QUOTE}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-dark"
+            <button
+              onClick={() => handleHashLink("#order")}
+              className={`ml-1 px-5 py-2.5 rounded-xl border-2 font-semibold text-sm transition-all duration-300 ${
+                isTransparent
+                  ? "border-white/60 text-white hover:bg-white hover:text-foreground"
+                  : "border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              }`}
             >
-              Get a Quote
-            </a>
+              {t("nav.order")}
+            </button>
           </div>
 
           <div className="flex items-center gap-3 lg:hidden">
+            {/* Mobile lang switcher */}
             <button
               onClick={cycleLang}
-              className="flex items-center gap-1 rounded-lg border border-white/20 px-2.5 py-1.5 text-xs font-semibold text-white/85"
+              className={`flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                isTransparent
+                  ? "text-white/90 border border-white/20"
+                  : "text-foreground border border-border"
+              }`}
             >
               <Globe size={12} />
               {langLabels[lang]}
             </button>
-            <button className="text-white" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
+            <button className={`transition-colors ${isTransparent ? "text-white" : "text-foreground"}`} onClick={() => setMobileOpen(!mobileOpen)}>
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -135,41 +149,26 @@ const Navbar = () => {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-white/10 bg-navy px-4 pb-6 pt-2 lg:hidden">
+        <div className="lg:hidden bg-background border-t border-border px-4 pb-6 pt-2">
+          <Link to="/" onClick={() => setMobileOpen(false)} className="block py-3 text-foreground font-medium">{t("nav.home")}</Link>
           <div>
-            <button
-              onClick={() => setServiceOpen(!serviceOpen)}
-              className="flex w-full items-center gap-1.5 py-3 font-medium text-white"
-            >
-              Solutions <ChevronDown size={14} className={`transition-transform ${serviceOpen ? "rotate-180" : ""}`} />
+            <button onClick={() => setServiceOpen(!serviceOpen)} className="flex items-center gap-1 py-3 text-foreground font-medium w-full">
+              {t("nav.services")} <ChevronDown size={14} className={`transition-transform ${serviceOpen ? "rotate-180" : ""}`} />
             </button>
             {serviceOpen && (
-              <div className="border-l border-white/10 pb-2 pl-4">
-                {solutions.map((s) => (
-                  <Link
-                    key={s.name}
-                    to={s.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="block py-2 text-sm text-navy-muted"
-                  >
-                    {s.name}
-                  </Link>
+              <div className="pl-4 pb-2">
+                {services.map((s) => (
+                  <Link key={s.name} to={s.href} onClick={() => setMobileOpen(false)} className="block py-2 text-sm text-muted-foreground">{s.name}</Link>
                 ))}
               </div>
             )}
           </div>
-          <button onClick={() => handleHashLink("#network")} className="block py-3 font-medium text-white">Network</button>
-          <Link to="/about" onClick={() => setMobileOpen(false)} className="block py-3 font-medium text-white">Company</Link>
-          <Link to="/blog" onClick={() => setMobileOpen(false)} className="block py-3 font-medium text-white">Resources</Link>
-          <button onClick={() => handleHashLink("#contact")} className="block py-3 font-medium text-white">Contact</button>
-          <a
-            href={WA_QUOTE}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-3 block w-full rounded-lg bg-primary px-5 py-3 text-center font-semibold text-primary-foreground"
-          >
-            Get a Quote
-          </a>
+          <button onClick={() => handleHashLink("#coverage")} className="block py-3 text-foreground font-medium">{t("nav.coverage")}</button>
+          <Link to="/about" onClick={() => setMobileOpen(false)} className="block py-3 text-foreground font-medium">{t("nav.about")}</Link>
+          <button onClick={() => handleHashLink("#contact")} className="block py-3 text-foreground font-medium">{t("nav.contact")}</button>
+          <button onClick={() => handleHashLink("#order")} className="mt-3 block w-full text-center px-5 py-2.5 rounded-xl border-2 border-primary text-primary font-semibold">
+            {t("nav.order")}
+          </button>
         </div>
       )}
     </nav>

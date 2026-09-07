@@ -14,17 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Manrope", "Inter", "system-ui", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
-        navy: {
-          DEFAULT: "hsl(var(--navy))",
-          elevated: "hsl(var(--navy-elevated))",
-          foreground: "hsl(var(--navy-foreground))",
-          muted: "hsl(var(--navy-muted))",
-        },
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -98,13 +91,6 @@ export default {
           "0%, 100%": { boxShadow: "0 0 20px hsl(145 100% 39% / 0.2)" },
           "50%": { boxShadow: "0 0 40px hsl(145 100% 39% / 0.4)" },
         },
-        "dash-flow": {
-          to: { strokeDashoffset: "-200" },
-        },
-        "node-pulse": {
-          "0%, 100%": { opacity: "0.35", transform: "scale(1)" },
-          "50%": { opacity: "1", transform: "scale(1.35)" },
-        },
         marquee: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
@@ -117,8 +103,6 @@ export default {
         "fade-in": "fade-in 0.6s ease-out forwards",
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
         marquee: "marquee 30s linear infinite",
-        "dash-flow": "dash-flow 3s linear infinite",
-        "node-pulse": "node-pulse 3s ease-in-out infinite",
       },
     },
   },
