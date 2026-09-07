@@ -43,7 +43,6 @@ const solutions = [
     desc: "Connect your infrastructure to strategic data centers.",
     icon: Database,
     href: "/dwdm",
-    span: "lg:col-span-2",
   },
   {
     title: "Cross Connect",
