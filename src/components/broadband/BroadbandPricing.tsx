@@ -5,18 +5,16 @@ interface Plan {
   name: string;
   speed: string;
   price: string;
-  yearly: string;
   features: string[];
   highlight?: boolean;
   badge?: string;
 }
 
 const plans: Plan[] = [
-  { name: "Starter", speed: "30 Mbps", price: "Rp 177.600", yearly: "Rp 1.776.600 /tahun", features: ["Unlimited Quota", "Free Router WiFi", "Support 24/7", "Instalasi Gratis"] },
-  { name: "Basic", speed: "50 Mbps", price: "Rp 222.000", yearly: "Rp 2.222.000 /tahun", features: ["Unlimited Quota", "Dual Band Router", "Support 24/7", "Instalasi Gratis", "No FUP"] },
-  { name: "Standard", speed: "75 Mbps", price: "Rp 266.400", yearly: "Rp 2.666.400 /tahun", features: ["Unlimited Quota", "Dual Band Router", "Support 24/7", "Instalasi Gratis", "No FUP", "Stabil & Simetris"], highlight: true, badge: "BEST VALUE" },
-  { name: "Premium", speed: "100 Mbps", price: "Rp 333.000", yearly: "Rp 3.333.000 /tahun", features: ["Unlimited Quota", "Priority Support", "Instalasi Gratis", "No FUP", "Stabil & Simetris"] },
-  { name: "Ultra", speed: "200 Mbps", price: "Rp 466.200", yearly: "Rp 4.666.200 /tahun", features: ["Dedicated 1:1", "Enterprise Router", "Priority Support", "Static IP", "Stabil & Simetris"] },
+  { name: "Standard", speed: "100 Mbps", price: "Rp 140.000", features: ["Unlimited Quota", "Free Router WiFi", "Support 24/7", "Instalasi Gratis"] },
+  { name: "Basic", speed: "150 Mbps", price: "Rp 239.189", features: ["Unlimited Quota", "Dual Band Router", "Support 24/7", "Instalasi Gratis", "No FUP"] },
+  { name: "Premium", speed: "200 Mbps", price: "Rp 288.198", features: ["Unlimited Quota", "Dual Band Router", "Priority Support", "Instalasi Gratis", "No FUP", "Stabil & Simetris"] },
+  { name: "Ultra", speed: "300 Mbps", price: "Rp 365.315", features: ["Unlimited Quota", "Enterprise Router", "Priority Support", "Instalasi Gratis", "No FUP", "Stabil & Simetris"], highlight: true, badge: "ULTRA" },
 ];
 
 const PricingCard = ({ plan, monthLabel }: { plan: Plan; monthLabel: string }) => (
@@ -35,7 +33,6 @@ const PricingCard = ({ plan, monthLabel }: { plan: Plan; monthLabel: string }) =
         {plan.price}
         <span className={`text-sm font-normal ${plan.highlight ? "text-primary-foreground/70" : "text-muted-foreground"}`}> {monthLabel}</span>
       </p>
-      <p className={`text-xs mt-1 ${plan.highlight ? "text-primary-foreground/60" : "text-muted-foreground"}`}>{plan.yearly}</p>
     </div>
     <ul className="space-y-3 flex-1 mb-8">
       {plan.features.map((f) => (
@@ -61,7 +58,7 @@ const BroadbandPricing = () => {
           {t("bb.pricing.heading1")} <span className="text-primary">{t("bb.pricing.heading2")}</span>
         </h2>
         <p className="text-muted-foreground text-lg text-center max-w-2xl mx-auto mb-16">{t("bb.pricing.desc")}</p>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 items-stretch">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {plans.map((plan) => (
             <PricingCard key={plan.name} plan={plan} monthLabel={t("bb.pricing.month")} />
           ))}
