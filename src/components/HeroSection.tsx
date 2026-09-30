@@ -1,181 +1,48 @@
-import { useState, useEffect, useCallback, useRef, TouchEvent } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import heroSlide1 from "@/assets/hero-slide-1.png";
-import heroSlide2 from "@/assets/hero-slide-2.png";
-import heroSlide3 from "@/assets/hero-slide-3.png";
-
-const slides = [
-  { src: heroSlide1, alt: "Jaringan Telekomunikasi Artamedia - Konektivitas Andal di Seluruh Indonesia" },
-  { src: heroSlide2, alt: "Infrastruktur Fiber Optik Kota - Artamedianet ISP Enterprise" },
-  { src: heroSlide3, alt: "Backbone Nasional Artamedia - Konektivitas Global" },
-];
+import { useState } from "react";
+import heroVideo from "@/assets/artamedia-hero-background.mp4.asset.json";
+import heroPoster from "@/assets/artamedia-hero-poster.jpg.asset.json";
 
 const HeroSection = () => {
-  const [current, setCurrent] = useState(0);
-  const [prev, setPrev] = useState<number | null>(null);
-  const [isHovered, setIsHovered] = useState(false);
-  const [direction, setDirection] = useState<"left" | "right">("left");
-  const [isAnimating, setIsAnimating] = useState(false);
-  const touchStartX = useRef(0);
-
-  const goTo = useCallback((index: number, dir: "left" | "right") => {
-    if (isAnimating) return;
-    setDirection(dir);
-    setIsAnimating(true);
-    setPrev(current);
-    setCurrent(index);
-    setTimeout(() => {
-      setPrev(null);
-      setIsAnimating(false);
-    }, 700);
-  }, [isAnimating, current]);
-
-  const next = useCallback(() => goTo((current + 1) % slides.length, "left"), [current, goTo]);
-  const prevSlide = useCallback(() => goTo((current - 1 + slides.length) % slides.length, "right"), [current, goTo]);
-
-  useEffect(() => {
-    if (isHovered) return;
-    const id = setInterval(next, 5000);
-    return () => clearInterval(id);
-  }, [next, isHovered]);
-
-  const handleTouchStart = (e: TouchEvent) => { touchStartX.current = e.touches[0].clientX; };
-  const handleTouchEnd = (e: TouchEvent) => {
-    const diff = touchStartX.current - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) diff > 0 ? next() : prevSlide();
-  };
-
-  const getSlideStyle = (index: number): React.CSSProperties => {
-    const isActive = index === current;
-    const isPrev = index === prev;
-
-    if (!isAnimating) {
-      return {
-        transform: isActive ? "translateX(0) scale(1)" : "translateX(100%) scale(0.95)",
-        opacity: isActive ? 1 : 0,
-        zIndex: isActive ? 10 : 5,
-        transition: "none",
-      };
-    }
-
-    if (isActive) {
-      return {
-        transform: "translateX(0) scale(1)",
-        opacity: 1,
-        zIndex: 10,
-        transition: "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.7s ease",
-        animationName: direction === "left" ? "slideInFromRight" : "slideInFromLeft",
-      };
-    }
-
-    if (isPrev) {
-      const exitTranslate = direction === "left" ? "-100%" : "100%";
-      return {
-        transform: `translateX(${exitTranslate}) scale(0.92)`,
-        opacity: 0,
-        zIndex: 5,
-        transition: "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease",
-      };
-    }
-
-    return {
-      transform: "translateX(100%) scale(0.95)",
-      opacity: 0,
-      zIndex: 1,
-      transition: "none",
-    };
-  };
-
-  const getInitialActiveStyle = (index: number): React.CSSProperties => {
-    if (!isAnimating || index !== current) return {};
-    const enterTranslate = direction === "left" ? "100%" : "-100%";
-    return {
-      transform: `translateX(${enterTranslate}) scale(0.95)`,
-    };
-  };
+  const [videoReady, setVideoReady] = useState(false);
 
   return (
     <section
       id="home"
-      className="relative w-full overflow-hidden bg-background aspect-[4/3] sm:aspect-[16/9] lg:aspect-[12/5] max-h-[850px]"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
+      className="relative w-full overflow-hidden bg-foreground aspect-[4/3] sm:aspect-[16/9] lg:aspect-[12/5] max-h-[850px]"
     >
-      <style>{`
-        @keyframes slideInFromRight {
-          from { transform: translateX(100%) scale(0.95); opacity: 0.3; }
-          to   { transform: translateX(0) scale(1); opacity: 1; }
-        }
-        @keyframes slideInFromLeft {
-          from { transform: translateX(-100%) scale(0.95); opacity: 0.3; }
-          to   { transform: translateX(0) scale(1); opacity: 1; }
-        }
-        .slide-enter-right {
-          animation: slideInFromRight 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-        .slide-enter-left {
-          animation: slideInFromLeft 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-      `}</style>
+      <video
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+          videoReady ? "opacity-100" : "opacity-0"
+        }`}
+        poster={heroPoster.url}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-label="Jaringan telekomunikasi Artamedia"
+        onCanPlay={() => setVideoReady(true)}
+      >
+        <source src={heroVideo.url} type="video/mp4" />
+      </video>
 
-      {slides.map((slide, i) => {
-        const isActive = i === current;
-        const isPrevSlide = i === prev;
-        const exitTranslate = direction === "left" ? "-105%" : "105%";
-        const enterClass = direction === "left" ? "slide-enter-right" : "slide-enter-left";
+      {!videoReady && (
+        <img
+          src={heroPoster.url}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      )}
 
-        return (
-          <div
-            key={i}
-            className={`absolute inset-0 will-change-transform ${isActive && isAnimating ? enterClass : ""}`}
-            style={{
-              zIndex: isActive ? 10 : isPrevSlide ? 5 : 1,
-              transform: isActive && !isAnimating
-                ? "translateX(0) scale(1)"
-                : isPrevSlide && isAnimating
-                ? `translateX(${exitTranslate}) scale(0.92)`
-                : !isActive && !isPrevSlide
-                ? "translateX(100%)"
-                : undefined,
-              opacity: isActive || isPrevSlide ? 1 : 0,
-              transition: isPrevSlide && isAnimating
-                ? "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease"
-                : "none",
-            }}
-          >
-            {isPrevSlide && isAnimating && (
-              <div className="absolute inset-0 bg-black/10 z-10 transition-opacity duration-700" />
-            )}
-            <div
-              role="img"
-              aria-label={slide.alt}
-              style={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
-                backgroundImage: `url(${slide.src})`,
-                backgroundSize: "100% 100%",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
-            />
-          </div>
-        );
-      })}
-
-      {/* Dark left-to-right gradient overlay for readability */}
       <div
-        className="absolute inset-0 z-[15] pointer-events-none"
+        className="absolute inset-0 z-10 pointer-events-none"
         style={{
           background:
             "linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.50) 35%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0) 100%)",
         }}
       />
 
-      {/* Hero content - left aligned */}
       <div className="absolute inset-0 z-20 flex items-center pb-16 sm:pb-0">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 w-full">
           <div className="max-w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl pt-10 sm:pt-8 md:pt-0">
@@ -205,43 +72,6 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Gradient edge hints */}
-      <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black/20 to-transparent z-20 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black/20 to-transparent z-20 pointer-events-none" />
-
-
-      {/* Arrows */}
-      <button
-        onClick={prevSlide}
-        aria-label="Previous slide"
-        className="hidden sm:flex absolute left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/30 hover:bg-black/60 text-white items-center justify-center backdrop-blur-sm transition-all duration-200 hover:scale-110 border border-white/20"
-      >
-        <ChevronLeft size={24} />
-      </button>
-      <button
-        onClick={next}
-        aria-label="Next slide"
-        className="hidden sm:flex absolute right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/30 hover:bg-black/60 text-white items-center justify-center backdrop-blur-sm transition-all duration-200 hover:scale-110 border border-white/20"
-      >
-        <ChevronRight size={24} />
-      </button>
-
-      {/* Dots */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2 items-center">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => goTo(i, i > current ? "left" : "right")}
-            aria-label={`Go to slide ${i + 1}`}
-            className={`rounded-full transition-all duration-400 ${
-              i === current
-                ? "w-7 h-3 bg-primary shadow-lg shadow-primary/50"
-                : "w-3 h-3 bg-white/50 hover:bg-white/80"
-            }`}
-          />
-        ))}
       </div>
     </section>
   );
