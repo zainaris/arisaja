@@ -1,5 +1,6 @@
 import { useState } from "react";
 import heroVideo from "@/assets/artamedia-hero-background.mp4";
+import heroVideoWebm from "@/assets/artamedia-hero-background.webm";
 import heroPoster from "@/assets/artamedia-hero-poster.jpg";
 
 const HeroSection = () => {
@@ -23,6 +24,7 @@ const HeroSection = () => {
         aria-label="Jaringan telekomunikasi Artamedia"
         onCanPlay={() => setVideoReady(true)}
       >
+        <source src={heroVideoWebm} type="video/webm" />
         <source src={heroVideo} type="video/mp4" />
       </video>
 
