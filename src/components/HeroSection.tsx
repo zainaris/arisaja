@@ -1,6 +1,6 @@
 import { useState } from "react";
-import heroVideo from "@/assets/artamedia-hero-background.mp4.asset.json";
-import heroPoster from "@/assets/artamedia-hero-poster.jpg.asset.json";
+import heroVideo from "@/assets/artamedia-hero-background.mp4";
+import heroPoster from "@/assets/artamedia-hero-poster.jpg";
 
 const HeroSection = () => {
   const [videoReady, setVideoReady] = useState(false);
@@ -14,7 +14,7 @@ const HeroSection = () => {
         className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
           videoReady ? "opacity-100" : "opacity-0"
         }`}
-        poster={heroPoster.url}
+        poster={heroPoster}
         autoPlay
         muted
         loop
@@ -23,12 +23,12 @@ const HeroSection = () => {
         aria-label="Jaringan telekomunikasi Artamedia"
         onCanPlay={() => setVideoReady(true)}
       >
-        <source src={heroVideo.url} type="video/mp4" />
+        <source src={heroVideo} type="video/mp4" />
       </video>
 
       {!videoReady && (
         <img
-          src={heroPoster.url}
+          src={heroPoster}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover"
