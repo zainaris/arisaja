@@ -1,10 +1,50 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import heroVideo from "@/assets/artamedia-hero-background.mp4";
 import heroVideoWebm from "@/assets/artamedia-hero-background.webm";
 import heroPoster from "@/assets/artamedia-hero-poster.jpg";
 
+const SWAP_LEAD_SECONDS = 1;
+
 const HeroSection = () => {
   const [videoReady, setVideoReady] = useState(false);
+  const [activeIsA, setActiveIsA] = useState(true);
+  const videoARef = useRef<HTMLVideoElement>(null);
+  const videoBRef = useRef<HTMLVideoElement>(null);
+  const activeIsARef = useRef(true);
+
+  // Seamless loop: a second, hidden video preloads and starts ~1s before
+  // the active one ends, then the two swap — no pause between replays.
+  useEffect(() => {
+    const handleTimeUpdate = () => {
+      const active = activeIsARef.current ? videoARef.current : videoBRef.current;
+      const next = activeIsARef.current ? videoBRef.current : videoARef.current;
+      if (!active || !next || !active.duration || !Number.isFinite(active.duration)) return;
+      if (active.duration - active.currentTime <= SWAP_LEAD_SECONDS) {
+        try {
+          next.currentTime = 0;
+        } catch {
+          // not seekable yet — loop attribute on the video itself covers this
+        }
+        next.play().catch(() => {});
+        activeIsARef.current = !activeIsARef.current;
+        setActiveIsA(activeIsARef.current);
+      }
+    };
+
+    const a = videoARef.current;
+    a?.addEventListener("timeupdate", handleTimeUpdate);
+    const b = videoBRef.current;
+    b?.addEventListener("timeupdate", handleTimeUpdate);
+    return () => {
+      a?.removeEventListener("timeupdate", handleTimeUpdate);
+      b?.removeEventListener("timeupdate", handleTimeUpdate);
+    };
+  }, []);
+
+  const videoClasses = (isActive: boolean) =>
+    `absolute inset-0 h-full w-full object-contain transition-opacity duration-500 ${
+      isActive ? "opacity-100" : "opacity-0"
+    }`;
 
   return (
     <section
@@ -12,16 +52,29 @@ const HeroSection = () => {
       className="relative w-full overflow-hidden bg-foreground aspect-video"
     >
       <video
-        className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-700 ${
-          videoReady ? "opacity-100" : "opacity-0"
-        }`}
+        ref={videoARef}
+        className={videoClasses(activeIsA)}
         poster={heroPoster}
         autoPlay
         muted
         loop
         playsInline
         preload="auto"
-        aria-label="Jaringan telekomunikasi Artamedia"
+        aria-hidden={!activeIsA}
+        aria-label={activeIsA ? "Jaringan telekomunikasi Artamedia" : undefined}
+        onCanPlay={() => setVideoReady(true)}
+      >
+        <source src={heroVideoWebm} type="video/webm" />
+        <source src={heroVideo} type="video/mp4" />
+      </video>
+      <video
+        ref={videoBRef}
+        className={videoClasses(!activeIsA)}
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden={!activeIsA}
         onCanPlay={() => setVideoReady(true)}
       >
         <source src={heroVideoWebm} type="video/webm" />
